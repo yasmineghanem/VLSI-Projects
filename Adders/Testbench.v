@@ -29,20 +29,17 @@ module Testbench ();
             $display("TESTCASE1: SUCCESS");
         end
         #100
-        #100
         //TESTCASE2 --> Negative + Negative
         A = -32'd100; B = -32'd423; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
-        if(PlusSum == -32'd523) begin
+        if(RippleCarrySum == -32'd523) begin
             $display("TESTCASE2: SUCCESS");
         end
         #100
-        #100
         //TESTCASE3 --> Positive + Negative
         A = 32'd40; B = -32'd50; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
-        if(PlusSum == -32'd10) begin
+        if(CarryLookAheadSum == -32'd10) begin
             $display("TESTCASE3: SUCCESS");
         end
-        #100
         #100
         //TESTCASE4 --> Positive Overflow
         A = 32'd2147483640; B = 32'd10; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
@@ -50,15 +47,29 @@ module Testbench ();
             $display("TESTCASE4: SUCCESS");
         end
         #100
-        #100
         //TESTCASE5 --> Negative Overflow
         A = -32'd2147483640; B = -32'd10; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
-        if(CarrySkipOverflow == 32'd1) begin
+        if(CarrySaveOverflow == 32'd1) begin
             $display("TESTCASE5: SUCCESS");
         end
+        #100
         //TESTCASE6 --> Random Case 1
+        A = -32'd40; B = 32'd40; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
+        if(CarrySelectSum == -32'd0) begin
+            $display("TESTCASE6: SUCCESS");
+        end
+        #100
         //TESTCASE7 --> Random Case 2
-        //TESTCASE8 --> Random Case 3        
+        A = 32'd422; B = -32'd200; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
+        if(CarrySaveSum == 32'd222) begin
+            $display("TESTCASE7: SUCCESS");
+        end
+        #100
+        //TESTCASE8 --> Random Case 3 
+        A = 32'd0; B = 32'd1456; RippleCarryCin = 0; CarrySelectCin = 0; CarrySaveCin = 0;
+        if(CarrySkipSum == 32'd1456) begin
+            $display("TESTCASE8: SUCCESS");
+        end
     end
     
 endmodule

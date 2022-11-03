@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/AddersDesktop
 vCarryLookAheadAdder
-Z0 !s110 1667463060
+Z0 !s110 1667464865
 !i10b 1
 !s100 i3_TQ@3RPdT:gUK15h>e=3
 Ijfal37_h<GJHdP6iCfYBE3
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1667463060.000000
+Z4 !s108 1667464865.000000
 Z5 !s107 PlusAdder.v|CarrySkipAdder.v|MUX21.v|CarrySelectAdder.v|CarrySaveAdder.v|CarryLookAheadAdder.v|FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
 Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
 !i113 1
@@ -75,29 +75,29 @@ R7
 R8
 n@carry@select@adder
 vCarrySkipAdder
-Z9 !s110 1667464145
+R0
 !i10b 1
-!s100 GOodeiI:lOEiL]S5K@iia2
-I?PS0Zn=ESJ8FQ`CaXa7PV2
+!s100 _oTo`_5LgX:8G=Pad=6]j1
+Iz;R:338Cj@4zzY5OTT21J0
 R1
 R2
-Z10 w1667464132
-Z11 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
-Z12 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
-L0 31
+Z9 w1667464204
+Z10 8CarrySkipAdder.v
+Z11 FCarrySkipAdder.v
+L0 24
 R3
 r1
 !s85 0
 31
-Z13 !s108 1667464145.000000
-Z14 !s107 FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
-Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
+R4
+R5
+R6
 !i113 1
 R7
 R8
 n@carry@skip@adder
 vFullAdder
-R9
+R0
 !i10b 1
 !s100 >J4OSBIFeMDoN?;1Xd;SX3
 I_EUi[8@=JRP5IlB3B`H3n2
@@ -111,9 +111,9 @@ R3
 r1
 !s85 0
 31
-R13
-R14
-R15
+R4
+R5
+R6
 !i113 1
 R7
 R8
@@ -163,7 +163,7 @@ R7
 R8
 n@plus@adder
 vRippleCarryAdder
-R9
+R0
 !i10b 1
 !s100 ;jGiRfY3PN=_;U=Kaob<53
 I2B99XP=6jcAJTCn1k=C;C2
@@ -177,31 +177,31 @@ R3
 r1
 !s85 0
 31
-R13
-R14
-R15
+R4
+R5
+R6
 !i113 1
 R7
 R8
 n@ripple@carry@adder
 vSkipLogic
-R9
+R0
 !i10b 1
-!s100 HgDkB?;Ak@UGYQ4aI:@GY1
-IfdfUP7TfnI]Q]cl9iHN:X3
+!s100 6A?nkHT97C<0@zIegi3SC3
+IVTVg`g?DFmPSR[LXOgf;W0
 R1
 R2
+R9
 R10
 R11
-R12
 L0 3
 R3
 r1
 !s85 0
 31
-R13
-R14
-R15
+R4
+R5
+R6
 !i113 1
 R7
 R8
@@ -209,11 +209,11 @@ n@skip@logic
 vTestbench
 R0
 !i10b 1
-!s100 `A_03NH[akY7S3JY7NeN81
-I8=AQ=<]ToPYh?JR6c>mOY1
+!s100 4Afnk5WGgZ=AH;;OS0KCP2
+I@>fEVQkMh@:iPPUB752I@1
 R1
 R2
-w1667463055
+w1667464850
 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v
 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v
 L0 8
