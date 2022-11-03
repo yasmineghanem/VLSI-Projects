@@ -21,7 +21,7 @@ module CarryLookAheadAdder #(parameter N=32)(A,B,Sum,Cout,Overflow);
   generate
     for (i=0; i<N; i=i+1) 
       begin
-         FullAdder F(A[i], B[i],Carry[i],Sum[i],Carry[i+1]);
+         FullAdder F(.A(A[i]), .B(B[i]),.Cin(Carry[i]),.Sum(Sum[i]),.Cout());
       end
   endgenerate
  

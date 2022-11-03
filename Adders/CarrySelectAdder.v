@@ -1,5 +1,13 @@
 `include "RippleCarryAdder.v"
-`include "MUX21.v"
+
+module MUX21(A, B, S, Out);
+
+output Out;
+input A, B, S;
+
+assign Out =(S) ? B : A;
+endmodule
+
 
 // Carry Select Adder - 32 bits
 module CarrySelectAdder #(parameter N = 32)(A,B,Sum,Cin,Cout,Overflow);
