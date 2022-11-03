@@ -75,13 +75,13 @@ R7
 R8
 n@carry@select@adder
 vCarrySkipAdder
-Z9 !s110 1667463633
+Z9 !s110 1667464145
 !i10b 1
 !s100 GOodeiI:lOEiL]S5K@iia2
 I?PS0Zn=ESJ8FQ`CaXa7PV2
 R1
 R2
-Z10 w1667463612
+Z10 w1667464132
 Z11 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
 Z12 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
 L0 31
@@ -89,7 +89,7 @@ R3
 r1
 !s85 0
 31
-Z13 !s108 1667463632.000000
+Z13 !s108 1667464145.000000
 Z14 !s107 FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
 Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
 !i113 1
@@ -187,8 +187,8 @@ n@ripple@carry@adder
 vSkipLogic
 R9
 !i10b 1
-!s100 59;_5i;c@W;RlRYm?=g^B0
-ISPCXfLW8gZTL2O^?A7^dU2
+!s100 HgDkB?;Ak@UGYQ4aI:@GY1
+IfdfUP7TfnI]Q]cl9iHN:X3
 R1
 R2
 R10
