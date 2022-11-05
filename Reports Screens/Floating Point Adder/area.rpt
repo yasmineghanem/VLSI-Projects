@@ -1,0 +1,11 @@
+Report Instance Areas: 
+-----+--------+----------+-----+---------
+     |Instance|Module    |Cells|Cell Area
+-----+--------+----------+-----+---------
+1    |top     |          | 1204|     2305
+2    |  as    |cmpshift  |  455|      736
+3    |  buff1 |buffer1   |   58|      262
+4    |  as1   |faddsub   |  188|      435
+5    |  buff2 |buffer2   |   37|      167
+6    |  as2   |normalized|  466|      704
+-----+--------+----------+-----+---------

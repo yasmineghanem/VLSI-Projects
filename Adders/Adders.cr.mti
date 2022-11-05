@@ -1,27 +1,4 @@
-{C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/RippleCarryAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/RippleCarryAdder.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module FullAdder
--- Compiling module RippleCarryAdder
-
-Top level modules:
-	RippleCarryAdder
-
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module MUX21
-
-Top level modules:
-	MUX21
-
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module FullAdder
--- Compiling module CarryLookAheadAdder
-
-Top level modules:
-	CarryLookAheadAdder
-
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v}
+{C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module FullAdder
 -- Compiling module RippleCarryAdder
@@ -31,22 +8,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	CarrySelectAdder
 
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FullAdder
+-- Compiling module CarryLookAheadAdder
+
+Top level modules:
+	CarryLookAheadAdder
+
 } {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/FullAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/FullAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module FullAdder
 
 Top level modules:
 	FullAdder
-
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module FullAdder
--- Compiling module RippleCarryAdder
--- Compiling module SkipLogic
--- Compiling module CarrySkipAdder
-
-Top level modules:
-	CarrySkipAdder
 
 } {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/PlusAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/PlusAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -55,13 +30,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	PlusAdder
 
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v}
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module FullAdder
--- Compiling module CarrySaveAdder
+-- Compiling module MUX21
 
 Top level modules:
-	CarrySaveAdder
+	MUX21
 
 } {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v} {2 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -114,5 +88,56 @@ Top level modules:
 	CarrySelectAdderTestbench
 	CarrySkipAdderTestbench
 	CarrySaveAdderTestbench
+
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v} {2 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FullAdder
+** Warning: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v(4)
+** while parsing file included at RippleCarryAdder.v(1)
+** at FullAdder.v(1): (vlog-2275) 'FullAdder' already exists and will be overwritten.
+-- Compiling module FullAdder
+-- Compiling module RippleCarryAdder
+-- Compiling module HalfAdder
+-- Compiling module CarryIncrementAdder
+
+Top level modules:
+	CarryIncrementAdder
+
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/RippleCarryAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/RippleCarryAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FullAdder
+-- Compiling module RippleCarryAdder
+
+Top level modules:
+	RippleCarryAdder
+
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FullAdder
+-- Compiling module mux_2x1
+-- Compiling module CarryBypassAdder4bits
+-- Compiling module CarryBypassAdder
+
+Top level modules:
+	FullAdder
+	CarryBypassAdder
+
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FullAdder
+-- Compiling module CarrySaveAdder
+
+Top level modules:
+	CarrySaveAdder
+
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FullAdder
+-- Compiling module RippleCarryAdder
+-- Compiling module SkipLogic
+-- Compiling module CarrySkipAdder
+
+Top level modules:
+	CarrySkipAdder
 
 } {} {}}

@@ -8,48 +8,90 @@ z2
 !i10f 100
 cModel Technology
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/AddersDesktop
-vcarry_bypass_4_bit
-Z0 !s110 1667599111
+vbuffer1
+Z0 !s110 1667660916
 !i10b 1
-!s100 oSL3Z1EP:0VV3UD47`KI<1
-I]8TH;51:ZzL[j7_1CTWZR3
+!s100 hBeHloo4S8o?6il035A9h2
+I4`LHGLdB>dO^SGYig<f:?3
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders
-Z3 w1667599102
-Z4 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v
-Z5 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v
-Z6 L0 16
-Z7 OV;L;10.5b;63
+Z3 w1667660880
+Z4 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v
+Z5 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v
+L0 45
+Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z8 !s108 1667599111.000000
-Z9 !s107 FullAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v|
-Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v|
+Z7 !s108 1667660916.000000
+Z8 !s107 C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v|
 !i113 1
-Z11 o-work work
-Z12 tCvgOpt 0
-vcarry_bypass_adder32bit
+Z10 o-work work
+Z11 tCvgOpt 0
+vbuffer2
 R0
 !i10b 1
-!s100 G2e4@MU2hAki98WSWHGJn1
-IE56J9OTZdVeVjngEL6:lD1
+!s100 a33KaAz8[1heXGaBdJood0
+IE0N4LeT6KJOeM?KD<_UK@0
 R1
 R2
 R3
 R4
 R5
-L0 43
-R7
+L0 28
+R6
 r1
 !s85 0
 31
+R7
 R8
 R9
-R10
 !i113 1
+R10
 R11
+vcarry_bypass_4_bit
+Z12 !s110 1667599111
+!i10b 1
+!s100 oSL3Z1EP:0VV3UD47`KI<1
+I]8TH;51:ZzL[j7_1CTWZR3
+R1
+R2
+Z13 w1667599102
+Z14 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v
+Z15 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v
+Z16 L0 16
+R6
+r1
+!s85 0
+31
+Z17 !s108 1667599111.000000
+Z18 !s107 FullAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v|
+Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v|
+!i113 1
+R10
+R11
+vcarry_bypass_adder32bit
 R12
+!i10b 1
+!s100 G2e4@MU2hAki98WSWHGJn1
+IE56J9OTZdVeVjngEL6:lD1
+R1
+R2
+R13
+R14
+R15
+L0 43
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
 vCarry_increment_adder32bit
 !s110 1667597002
 !i10b 1
@@ -58,132 +100,132 @@ I>59Ye@CF>GBkjGjo>1TBW0
 R1
 R2
 w1667596846
-Z13 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v
-Z14 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v
+Z20 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v
+Z21 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v
 L0 40
-R7
+R6
 r1
 !s85 0
 31
 !s108 1667597002.000000
-Z15 !s107 RippleCarryAdder.v|FullAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v|
-Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v|
+Z22 !s107 RippleCarryAdder.v|FullAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v|
+Z23 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v|
 !i113 1
+R10
 R11
-R12
 n@carry_increment_adder32bit
 vCarryBypassAdder
-Z17 !s110 1667600461
+R0
 !i10b 1
 !s100 dI]BOihTK4Oh3gmSk[eeB1
 I>M<BPg^Acij:F<2PRWVPB2
 R1
 R2
-Z18 w1667600391
-R4
-R5
+Z24 w1667600391
+R14
+R15
 L0 39
-R7
+R6
 r1
 !s85 0
 31
-Z19 !s108 1667600461.000000
-R9
-R10
+R7
+R18
+R19
 !i113 1
+R10
 R11
-R12
 n@carry@bypass@adder
 vCarryBypassAdder4bits
-R17
+R0
 !i10b 1
 !s100 62M5cQ@GRRzG7T<Pk2m921
 IaChR=5@QG^3Ec^AAa@Km31
 R1
 R2
-R18
-R4
-R5
+R24
+R14
+R15
 L0 12
-R7
+R6
 r1
 !s85 0
 31
+R7
+R18
 R19
-R9
-R10
 !i113 1
+R10
 R11
-R12
 n@carry@bypass@adder4bits
 vCarryIncrementAdder
-R17
+R0
 !i10b 1
 !s100 =b9?;?g_6PA:]?0nT3=gi3
 IjF=c8FfQB7HAQFgV5@O:M2
 R1
 R2
-Z20 w1667600401
-R13
-R14
+Z25 w1667600401
+R20
+R21
+R16
 R6
-R7
 r1
 !s85 0
 31
-Z21 !s108 1667600460.000000
-R15
-R16
+Z26 !s108 1667660915.000000
+R22
+R23
 !i113 1
+R10
 R11
-R12
 n@carry@increment@adder
 vCarryLookAheadAdder
-Z22 !s110 1667600460
+Z27 !s110 1667660915
 !i10b 1
 !s100 6Q0ABUPVUlGbk_2:WJlD]1
 I<m;P`i8I`<no_ET`lf41:0
 R1
 R2
-Z23 w1667551732
+Z28 w1667551732
 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v
 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v
 L0 6
-R7
+R6
 r1
 !s85 0
 31
-R21
+R26
 !s107 FullAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarryLookAheadAdder.v|
 !i113 1
+R10
 R11
-R12
 n@carry@look@ahead@adder
 vCarryLookAheadAdderTestbench
-R22
+R27
 !i10b 1
 !s100 `[BzS5aZ5S=^`<XoB]g8T1
 IiFliDnW6WQ8jGR=`hU[WS2
 R1
 R2
-Z24 w1667595240
-Z25 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v
-Z26 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v
+Z29 w1667595240
+Z30 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v
+Z31 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v
 L0 207
-R7
+R6
 r1
 !s85 0
 31
-R21
-Z27 !s107 PlusAdder.v|CarrySkipAdder.v|CarrySelectAdder.v|CarrySaveAdder.v|CarryLookAheadAdder.v|FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
-Z28 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
+R26
+Z32 !s107 PlusAdder.v|CarrySkipAdder.v|CarrySelectAdder.v|CarrySaveAdder.v|CarryLookAheadAdder.v|FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
+Z33 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
 !i113 1
+R10
 R11
-R12
 n@carry@look@ahead@adder@testbench
 vCarrySaveAdder
-R22
+R27
 !i10b 1
 !s100 LMFH6e@B7^=T?f:h<BC[I2
 Iffk4:iaE:jNPKodGD9fie2
@@ -193,173 +235,236 @@ w1667417424
 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v
 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v
 L0 3
-R7
+R6
 r1
 !s85 0
 31
-R21
+R26
 !s107 FullAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v|
 !i113 1
+R10
 R11
-R12
 n@carry@save@adder
 vCarrySaveAdderTestbench
-R22
+R27
 !i10b 1
 !s100 h5DzgzEddNf`Uib_J0k8F3
 IVaP6@aW3;[bW4<B5i63PP1
 R1
 R2
-R24
-R25
-R26
+R29
+R30
+R31
 L0 506
-R7
+R6
 r1
 !s85 0
 31
-R21
-R27
-R28
+R26
+R32
+R33
 !i113 1
+R10
 R11
-R12
 n@carry@save@adder@testbench
 vCarrySelectAdder
-R22
+R27
 !i10b 1
 !s100 i1mT3aboSGKP^7XB=0C]Z1
 IfJ>7alQ`b:D;69ic]NULQ2
 R1
 R2
-R23
+R28
 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v
 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v
 L0 13
-R7
+R6
 r1
 !s85 0
 31
-R21
+R26
 !s107 FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySelectAdder.v|
 !i113 1
+R10
 R11
-R12
 n@carry@select@adder
 vCarrySelectAdderTestbench
-R22
+R27
 !i10b 1
 !s100 zWF8bVXnafchQB:T]TLQe1
 I5<La@RBKoN[@me36gNeIE3
 R1
 R2
-R24
-R25
-R26
+R29
+R30
+R31
 L0 306
-R7
+R6
 r1
 !s85 0
 31
-R21
-R27
-R28
+R26
+R32
+R33
 !i113 1
+R10
 R11
-R12
 n@carry@select@adder@testbench
 vCarrySkipAdder
-R22
+R27
 !i10b 1
 !s100 _oTo`_5LgX:8G=Pad=6]j1
 IQJR4h735k<P[W]`>]CaLl0
 R1
 R2
-Z29 w1667464204
-Z30 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
-Z31 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
+Z34 w1667464204
+Z35 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
+Z36 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v
 L0 24
-R7
+R6
 r1
 !s85 0
 31
-R21
-Z32 !s107 FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
-Z33 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
+R26
+Z37 !s107 FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
+Z38 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySkipAdder.v|
 !i113 1
+R10
 R11
-R12
 n@carry@skip@adder
 vCarrySkipAdderTestbench
-R22
+R27
 !i10b 1
 !s100 QlAWYZf9YFJjn`=>la5KV3
 I3=an<MF9350T1Hg@K<gU_1
 R1
 R2
-R24
-R25
-R26
+R29
+R30
+R31
 L0 406
-R7
+R6
 r1
 !s85 0
 31
-R21
-R27
-R28
+R26
+R32
+R33
 !i113 1
+R10
 R11
-R12
 n@carry@skip@adder@testbench
+vcmpshift
+R0
+!i10b 1
+!s100 8M71A4fTgRge1TEA29odO1
+Ij7HKTPI`]mj5TOQJd=UN>2
+R1
+R2
+R3
+R4
+R5
+L0 113
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vfaddsub
+R0
+!i10b 1
+!s100 KbMTE324z=WdeHO;@^EeA1
+ID=e<E1Wj=OMd3^JYA<NfZ3
+R1
+R2
+R3
+R4
+R5
+L0 89
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vfpadd
+R0
+!i10b 1
+!s100 a5ef65RMi>0INd0N8l5I21
+I@e5O<3nSnaJoPkO;;>lnm2
+R1
+R2
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
 vFullAdder
-R17
+R0
 !i10b 1
 !s100 >J4OSBIFeMDoN?;1Xd;SX3
 I_EUi[8@=JRP5IlB3B`H3n2
 R1
 R2
-Z34 w1667596057
+Z39 w1667596057
 8FullAdder.v
 FFullAdder.v
 L0 1
-R7
+R6
 r1
 !s85 0
 31
+R7
+R18
 R19
-R9
-R10
 !i113 1
+R10
 R11
-R12
 n@full@adder
 vHalfAdder
-R17
+R0
 !i10b 1
 !s100 XVF;QGeCMm8;;8eKZN9O91
 I>601N>hiO<`H`czWB`9kK1
 R1
 R2
+R25
 R20
-R13
-R14
+R21
 L0 7
-R7
+R6
 r1
 !s85 0
 31
-R21
-R15
-R16
+R26
+R22
+R23
 !i113 1
+R10
 R11
-R12
 n@half@adder
 vMUX21
-R22
+R27
 !i10b 1
 !s100 =0i]`<GBeJzkF_Q[4]=FV0
 I1nUE_M1V0Y6CdB1QB;Z1H2
@@ -369,40 +474,61 @@ w1667394364
 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v
 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v
 L0 1
-R7
+R6
 r1
 !s85 0
 31
-R21
+R26
 !s107 C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/MUX21.v|
 !i113 1
+R10
 R11
-R12
 n@m@u@x21
 vmux_2x1
-R17
+R0
 !i10b 1
 !s100 7llkQR:jN]HzXP`XKXi813
 I`RSkgENUoZdo5<`P8?n?C1
 R1
 R2
-R18
-R4
-R5
+R24
+R14
+R15
 L0 3
-R7
+R6
 r1
 !s85 0
 31
+R7
+R18
 R19
-R9
-R10
 !i113 1
+R10
 R11
-R12
+vnormalized
+R0
+!i10b 1
+!s100 BAImm_hK71872dDB;L^0d0
+IBaYPWo>j?T8`BC_dJ?X0E2
+R1
+R2
+R3
+R4
+R5
+L0 64
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
 vPlusAdder
-R22
+R27
 !i10b 1
 !s100 5_?WaZHi6RTW8EUnNb7[43
 IE^;zIb8V@MkUoH6AkV1PL3
@@ -412,148 +538,148 @@ w1667454464
 8C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/PlusAdder.v
 FC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/PlusAdder.v
 L0 1
-R7
+R6
 r1
 !s85 0
 31
-R21
+R26
 !s107 C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/PlusAdder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/PlusAdder.v|
 !i113 1
+R10
 R11
-R12
 n@plus@adder
 vPlusAdderTestbench
-R22
+R27
 !i10b 1
 !s100 E>@e=3>mRkD>;bM@@PPQ01
 I?PEKH__hMkO?TFh8MFJh>1
 R1
 R2
-R24
-R25
-R26
+R29
+R30
+R31
 L0 8
-R7
+R6
 r1
 !s85 0
 31
-R21
-R27
-R28
+R26
+R32
+R33
 !i113 1
+R10
 R11
-R12
 n@plus@adder@testbench
 vRibble_carry_adder16bit
-Z35 !s110 1667598089
+Z40 !s110 1667598089
 !i10b 1
 !s100 >LCl9O8JQ@67;EjVYc:5R0
 I6IIWZbiW?]hPzR_Q`XTLC0
 R1
 R2
-Z36 w1667598085
-R13
-R14
+Z41 w1667598085
+R20
+R21
 L0 33
-R7
+R6
 r1
 !s85 0
 31
-Z37 !s108 1667598089.000000
-R15
-R16
+Z42 !s108 1667598089.000000
+R22
+R23
 !i113 1
+R10
 R11
-R12
 n@ribble_carry_adder16bit
 vRibble_carry_adder4bit
-R35
+R40
 !i10b 1
 !s100 XePO?KR;6XYdok0cT>ji:2
 I53hi0KTek[48l`>S?A8252
 R1
 R2
-R36
-R13
-R14
+R41
+R20
+R21
 L0 18
-R7
+R6
 r1
 !s85 0
 31
-R37
-R15
-R16
+R42
+R22
+R23
 !i113 1
+R10
 R11
-R12
 n@ribble_carry_adder4bit
 vRippleCarryAdder
-R17
+R0
 !i10b 1
 !s100 ;jGiRfY3PN=_;U=Kaob<53
 I2B99XP=6jcAJTCn1k=C;C2
 R1
 R2
-R34
+R39
 8RippleCarryAdder.v
 FRippleCarryAdder.v
 L0 2
-R7
+R6
 r1
 !s85 0
 31
-R21
-R15
-R16
+R26
+R22
+R23
 !i113 1
+R10
 R11
-R12
 n@ripple@carry@adder
 vRippleCarryAdderTestbench
-R22
+R27
 !i10b 1
 !s100 JJn3JIW^AG@Ca?2nZ2c1d0
 IEL@_TD50EgEinKXZ9]PIj0
 R1
 R2
-R24
-R25
-R26
+R29
+R30
+R31
 L0 108
-R7
+R6
 r1
 !s85 0
 31
-R21
-R27
-R28
+R26
+R32
+R33
 !i113 1
+R10
 R11
-R12
 n@ripple@carry@adder@testbench
 vSkipLogic
-R22
+R27
 !i10b 1
 !s100 6A?nkHT97C<0@zIegi3SC3
 IW<E:Oa@hH_ioWPDF]zgPG3
 R1
 R2
-R29
-R30
-R31
+R34
+R35
+R36
 L0 3
-R7
+R6
 r1
 !s85 0
 31
-R21
-R32
-R33
+R26
+R37
+R38
 !i113 1
+R10
 R11
-R12
 n@skip@logic
 vTestbench
 !s110 1667464865
@@ -563,17 +689,17 @@ I@>fEVQkMh@:iPPUB752I@1
 R1
 dC:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders
 w1667464850
-R25
-R26
+R30
+R31
 L0 8
-R7
+R6
 r1
 !s85 0
 31
 !s108 1667464865.000000
 !s107 PlusAdder.v|CarrySkipAdder.v|MUX21.v|CarrySelectAdder.v|CarrySaveAdder.v|CarryLookAheadAdder.v|FullAdder.v|RippleCarryAdder.v|C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/Testbench.v|
-R28
+R33
 !i113 1
+R10
 R11
-R12
 n@testbench
