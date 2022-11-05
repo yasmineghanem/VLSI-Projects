@@ -1,0 +1,56 @@
+Report Instance Areas: 
+-----+----------------+-----------------------+-----+---------
+     |Instance        |Module                 |Cells|Cell Area
+-----+----------------+-----------------------+-----+---------
+1    |top             |                       |  161|      204
+2    |  RCAsecond     |RippleCarryAdder__0_182|   62|       78
+3    |    genblk1_0_F |FullAdder__0_181       |    2|        3
+4    |    genblk1_1_F |FullAdder__0_177       |    4|        5
+5    |    genblk1_2_F |FullAdder__0_173       |    4|        5
+6    |    genblk1_3_F |FullAdder__0_169       |    4|        5
+7    |    genblk1_4_F |FullAdder__0_165       |    4|        5
+8    |    genblk1_5_F |FullAdder__0_161       |    4|        5
+9    |    genblk1_6_F |FullAdder__0_157       |    4|        5
+10   |    genblk1_7_F |FullAdder__0_153       |    4|        5
+11   |    genblk1_8_F |FullAdder__0_149       |    4|        5
+12   |    genblk1_9_F |FullAdder__0_145       |    4|        5
+13   |    genblk1_10_F|FullAdder__0_141       |    4|        5
+14   |    genblk1_11_F|FullAdder__0_137       |    4|        5
+15   |    genblk1_12_F|FullAdder__0_133       |    4|        5
+16   |    genblk1_13_F|FullAdder__0_129       |    4|        5
+17   |    genblk1_14_F|FullAdder__0_125       |    4|        5
+18   |    genblk1_15_F|FullAdder__0_121       |    4|        5
+19   |  RCAfirst      |RippleCarryAdder       |   62|       78
+20   |    genblk1_0_F |FullAdder__0_58        |    2|        3
+21   |    genblk1_1_F |FullAdder__0_62        |    4|        5
+22   |    genblk1_2_F |FullAdder__0_66        |    4|        5
+23   |    genblk1_3_F |FullAdder__0_70        |    4|        5
+24   |    genblk1_4_F |FullAdder__0_74        |    4|        5
+25   |    genblk1_5_F |FullAdder__0_78        |    4|        5
+26   |    genblk1_6_F |FullAdder__0_82        |    4|        5
+27   |    genblk1_7_F |FullAdder__0_86        |    4|        5
+28   |    genblk1_8_F |FullAdder__0_90        |    4|        5
+29   |    genblk1_9_F |FullAdder__0_94        |    4|        5
+30   |    genblk1_10_F|FullAdder__0_98        |    4|        5
+31   |    genblk1_11_F|FullAdder__0_102       |    4|        5
+32   |    genblk1_12_F|FullAdder__0_106       |    4|        5
+33   |    genblk1_13_F|FullAdder__0_110       |    4|        5
+34   |    genblk1_14_F|FullAdder__0_114       |    4|        5
+35   |    genblk1_15_F|FullAdder              |    4|        5
+36   |  hf0           |HalfAdder__0_12        |    2|        3
+37   |  hf15          |HalfAdder__0_15        |    2|        3
+38   |  hf14          |HalfAdder__0_18        |    2|        3
+39   |  hf13          |HalfAdder__0_21        |    2|        3
+40   |  hf12          |HalfAdder__0_24        |    2|        3
+41   |  hf11          |HalfAdder__0_27        |    2|        3
+42   |  hf10          |HalfAdder__0_30        |    2|        3
+43   |  hf9           |HalfAdder__0_33        |    2|        3
+44   |  hf8           |HalfAdder__0_36        |    2|        3
+45   |  hf7           |HalfAdder__0_39        |    2|        3
+46   |  hf6           |HalfAdder__0_42        |    2|        3
+47   |  hf5           |HalfAdder__0_45        |    2|        3
+48   |  hf4           |HalfAdder__0_48        |    2|        3
+49   |  hf3           |HalfAdder__0_51        |    2|        3
+50   |  hf2           |HalfAdder__0_54        |    2|        3
+51   |  hf1           |HalfAdder              |    2|        3
+-----+----------------+-----------------------+-----+---------
