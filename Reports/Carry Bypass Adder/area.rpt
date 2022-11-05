@@ -1,0 +1,14 @@
+Report Instance Areas: 
+-----+---------------+---------------------------+-----+---------
+     |Instance       |Module                     |Cells|Cell Area
+-----+---------------+---------------------------+-----+---------
+1    |top            |                           |    4|        3
+2    |  genblk1_0_Cba|CarryBypassAdder4bits__0_6 |    0|        0
+3    |  genblk1_1_Cba|CarryBypassAdder4bits__0_11|    0|        0
+4    |  genblk1_2_Cba|CarryBypassAdder4bits__0_16|    0|        0
+5    |  genblk1_3_Cba|CarryBypassAdder4bits__0_21|    0|        0
+6    |  genblk1_4_Cba|CarryBypassAdder4bits__0_26|    0|        0
+7    |  genblk1_5_Cba|CarryBypassAdder4bits__0_31|    0|        0
+8    |  genblk1_6_Cba|CarryBypassAdder4bits__0_36|    0|        0
+9    |  genblk1_7_Cba|CarryBypassAdder4bits      |    0|        0
+-----+---------------+---------------------------+-----+---------

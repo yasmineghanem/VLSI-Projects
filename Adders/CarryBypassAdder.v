@@ -1,13 +1,5 @@
 `include "FullAdder.v"
-
-module mux_2x1(input a,
-               input b,
-               input sel,
-               output out);
-
-    assign out=(sel)?a:b;
-
-endmodule
+`include "MUX21"
 
 module CarryBypassAdder4bits(input [3:0]a,
                            input [3:0]b,
@@ -49,7 +41,7 @@ module CarryBypassAdder #(parameter N = 32) (A,B,Sum,Cin,Cout,Overflow);
     wire [7:0]carrys_out;
 
     assign carrys_in[0] = Cin;
-    assign cout = carrys_out[7];
+    assign Cout = carrys_out[7];
     assign Overflow = (A[31] == B[31] && (Sum[31] != A[31]))? 1 : 0;
 
     genvar k;

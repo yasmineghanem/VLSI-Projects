@@ -1,0 +1,24 @@
+Report for group default
+Report for group I2R
+Report for group I2O
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Startpoint: B[31]
+    (Clocked by vsysclk R)
+Endpoint: Overflow
+    (Clocked by vsysclk R)
+Path Group: I2O
+Data required time: 19500.0
+    (Clock shift: 20000.0, minus Uncertainty: 0.0, plus Latency 0.0, minus Out delay: 500.0)
+Data arrival time: 1075.3
+Slack: 18424.7
+Logic depth: 1
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                     Arrival               Arc      Net               Net    Total   fan-                                   
+Path                     Module/Cell           Edge     Time    Delay    Delay    Delay     Slew     Load     Load    out     Location Power Domain      (V)
+                                                        (ps)     (ps)     (ps)     (ps)     (ps)     (ff)     (ff)    (#)      (um,um)                      
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+B[31]                    {set_input_delay}        r   1000.0   1000.0   1000.0                        1.8     29.2      2    33,   64                       
+i_0_0_0/B3->ZN           OAI33_X1                rf   1075.2     75.2     75.1      0.1    100.0      1.9     11.9      1    32,   34  /PD_TOP        (1.10)
+Overflow                                          f   1075.3      0.1               0.1     32.9                             30,   64                       
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Report for group R2O

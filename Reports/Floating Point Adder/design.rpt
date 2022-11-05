@@ -1,0 +1,36 @@
+Report Physical info: 
+------------------------+------------------+-----------+------------
+                        |                  |Area (squm)|Leakage (uW)
+------------------------+------------------+-----------+------------
+Design Name             |FloatingPointAdder|           |            
+  Total Instances       |              1204|       2305|      47.303
+    Macros              |                 0|          0|       0.000
+    Pads                |                 0|          0|       0.000
+    Phys                |                 0|          0|       0.000
+    Blackboxes          |                 0|          0|       0.000
+    Cells               |              1204|       2305|      47.303
+      Buffers           |                 0|          0|       0.000
+      Inverters         |               196|        104|       2.813
+      Clock-Gates       |                 0|          0|       0.000
+      Combinational     |               786|       1196|      26.927
+      Latches           |                 0|          0|       0.000
+      FlipFlops         |               222|       1004|      17.563
+       Single-Bit FF    |               222|       1004|      17.563
+       Multi-Bit FF     |                 0|          0|       0.000
+       Clock-Gated      |                 0|           |            
+       Bits             |               222|       1004|      17.563
+         Load-Enabled   |                 0|           |            
+         Clock-Gated    |                 0|           |            
+  Tristate Pin Count    |                 0|           |            
+Physical Info           |Placed            |           |            
+  Chip Size (mm x mm)   |0.122 x 0.122     |      14878|            
+  Fixed Cell Area       |                  |          0|            
+    Phys Only           |                 0|          0|            
+  Placeable Area        |                  |       3816|            
+  Movable Cell Area     |                  |       2305|            
+  Utilization (%)       |                60|           |            
+  Chip Utilization (%)  |                60|           |            
+  Total Wire Length (mm)|             6.127|           |            
+  Longest Wire (mm)     |             0.067|           |            
+  Average Wire (mm)     |             0.063|           |            
+------------------------+------------------+-----------+------------
