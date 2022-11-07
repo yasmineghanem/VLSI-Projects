@@ -1,156 +1,107 @@
-module FloatingPointAdder(a,b,clk,out);
-input[31:0]a,b;
-input clk;
-output [31:0]out;
-wire [7:0]e1,e2,ex,ey,exy,ex1,ey1,ex2,ex3;
-wire s1,s2,s,s3,sr,sn,s4,sx1,sy1,sn1,sn2,sn3,sn4,sr1,sr2,sn5,sn6;
-wire [23:0]m1,m2,mx,my,mxy,mx1,my1;
-wire [24:0]mxy1,mxy2;
-assign s1=a[31];
-assign s2=b[31];
-assign e1=a[30:23];
-assign e2=b[30:23];
-assign m1[23]=1'b1;
-assign m2[23]=1'b1;
-assign m1[22:0]=a[22:0];
-assign m2[22:0]=b[22:0];
+`include "MUXs.v"
+`include "Subtractor.v"
+`include "Shifter.v"
+`include "PlusAdder.v"
+`include "Incrementer.v"
+`include "TwosComplement.v"
+`include "LeadingZeroCounter.v"
 
-//submodule for compare and shfit
-cmpshift as(e1[7:0],e2[7:0],s1,s2,m1[23:0],m2[23:0],clk,ex,ey,mx,my,s,sx1,sy1);
-buffer1 buff1(ex,ey,sx1,sy1,mx,my,s,clk,ex1,ey1,mx1,my1,sn,sn1,sn2);
+module FloatingPointAdder (A,B,Sum, Overflow);
+    input [31:0] A,B;
+    output [31:0] Sum;
+    output Overflow;
+    //ALGORITHM
 
-//sub module for mantissa addition snd subtraction
-faddsub as1(mx1,my1,sn1,sn2,sn,ex1,clk,mxy1,ex2,sn3,sn4,s3,sr1);
-buffer2 buff2(mxy1,s3,sr1,ex2,sn3,sn4,clk,mxy2,ex3,sn5,sn6,s4,sr2);
+    //1. Seperate numbers
+    wire [22:0] MentissaA, MentissaB;
+    wire [7:0] ExponentA, ExponentB;
+    wire SignA, SignB;
 
-//sub module for normalization
-normalized as2(mxy2,sr2,sn5,sn6,s4,clk,ex3,sr,exy,mxy);
-assign out={sr,exy,mxy[22:0]};
-endmodule
+    assign MentissaA = A[22:0];
+    assign MentissaB = B[22:0];
+    assign ExponentA = A[30:23];
+    assign ExponentB = B[30:23] ;
+    assign SignA = A[31];
+    assign SignB = B[31]; 
 
-module buffer2(mxy1,s3,sr1,ex,sn3,sn4,clk,mxy2,ex3,sn5,sn6,s4,sr2);
-input [24:0]mxy1;
-input s3,clk,sr1,sn3,sn4;
-input [7:0]ex;
-output reg[24:0]mxy2;
-output reg[7:0]ex3;
-output reg s4,sn5,sn6,sr2;
-always@(posedge clk)
-begin
-sr2=sr1;
-sn5=sn3;
-sn6=sn4;
-ex3=ex;
-mxy2=mxy1;
-s4=s3;
-end
-endmodule
+    // Get higher exponent by subtracting them
+    wire [7:0] ExponentDifference, TwosCompExpDiff ,ModExponentDifference;
+    wire Borrow;
+    Subtractor Sub(ExponentA,ExponentB,ExponentDifference,Borrow);
 
-module buffer1(ex,ey,sx1,sy1,mx,my,s,clk,ex1,ey1,mx1,my1,sn,sn1,sn2);
-input [7:0]ex,ey;
-input [23:0]mx,my;
-input s,clk,sx1,sy1;
-output reg [7:0]ex1,ey1;
-output reg [23:0]mx1,my1;
-output reg sn,sn1,sn2;
-always@(posedge clk)
-begin
-sn1=sx1;
-sn2=sy1;
-ex1=ex;
-ey1=ey;
-mx1=mx;
-my1=my;
-sn=s;
-end
-endmodule
+    //Get Modulus of exponent
+    TwosComplement ExpTwosComp(ExponentDifference, TwosCompExpDiff);
+    assign ModExponentDifference = (Borrow == 1'b1) ? TwosCompExpDiff : ExponentDifference;
 
-module normalized(mxy1,s,s1,s2,s3,clk,ex,sr,exy,mxy);
-input[24:0]mxy1;
-input s,s1,s2,s3,clk;
-input[7:0]ex;
-output reg sr;
-output reg[7:0]exy;
-output reg[23:0]mxy;
-reg [24:0]mxy2;
-always@(posedge clk)
-begin
-sr=s?s1^(mxy1[24]&s3):s2^(mxy1[24]&s3);
-mxy2=(mxy1[24]&s3)?~mxy1+25'b1:mxy1;
-mxy=mxy2[24:1];
-exy=ex;
-repeat(24)
-begin
-if(mxy[23]==1'b0)
-begin
-mxy=mxy<<1'b1;
-exy=exy-8'b1;
-end
-end
-end
-endmodule
+    //Get the higher exponent 
+    wire [7:0] HigherExponent;
+    MUX8bits ExponentMux1(ExponentA,ExponentB,Borrow,HigherExponent);
 
-module faddsub(a,b,s1,s2,sn,ex1,clk,out,ex2,sn3,sn4,s,sr1); //submodule for addition or subtraction
-input [23:0]a,b;
-input[7:0]ex1;
-input s1,s2,clk,sn;
-output reg [23:0]ex2;
-output reg[24:0]out;
-output reg s,sn3,sn4,sr1;
-always@(posedge clk)
-begin
-ex2=ex1;
-sr1=sn;
-sn3=s1;
-sn4=s2;
-s=s1^s2;
-if(s)
-begin
-out=a-b;
-end
-else
-begin
-out=a+b;
-end
-end
-endmodule
-module cmpshift(e1,e2,s1,s2,m1,m2,clk,ex,ey,mx,my,s,sx1,sy1); //module for copare &shift
-input [7:0]e1,e2;
-input [23:0]m1,m2;
-input clk,s1,s2;
-output reg[7:0]ex,ey;
-output reg[23:0]mx,my;
-output reg s,sx1,sy1;
-reg [7:0]diff;
-always@(posedge clk)
-begin
-sx1=s1;
-sy1=s2;
-if(e1==e2)
-begin
-ex=e1+8'b1;
-ey=e2+8'b1;
-mx=m1;
-my=m2;
-s=1'b1;
-end
-else if(e1>e2)
-begin
-diff=e1-e2;
-ex=e1+8'b1;
-ey=e1+8'b1;
-mx=m1;
-my=m2>>diff;
-s=1'b1;
-end
-else
-begin
-diff=e2-e1;
-ex=e2+8'b1;
-ey=e2+8'b1;
-mx=m2;
-my=m1>>diff;
-s=1'b0;
-end
-end
+    //Get the mantissa of the smaller exponent
+    wire [23:0] MantissaToShift, UnShiftedMantissa;
+    Mux24bits MantissaMux1(MentissaB,MentissaA,Borrow,MantissaToShift);
+    Mux24bits MantissaMux2(MentissaA,MentissaB,Borrow,UnShiftedMantissa);
+
+    //Handling the sign bit 
+    wire SignSel, BothNeg;
+    assign SignSel = (SignA == SignB) ? 0 : 1;
+    assign BothNeg = (SignA == 1 && SignB == 1) ? 1 : 0;
+    wire Sign1, Sign2;
+    MUX21 SignMux1(SignB, SignA, Borrow, Sign1);
+    MUX21 SignMux2(SignA, SignB, Borrow, Sign2);
+
+    //Shift the mantissa by the amount of exponent difference
+    wire [23:0] ShiftedMantissa;
+    RightShifter RightShifter1(MantissaToShift,ModExponentDifference,ShiftedMantissa);
+
+    //Calculate 2's complement for both mantissa's and choose using a mux and the sign as the selector
+    wire [23:0] ShiftedMantissaComplement, UnShiftedMantissaComplement;
+    TwosComplement #(24) ShiftedComplement(ShiftedMantissa, ShiftedMantissaComplement);
+    TwosComplement #(24) NonShiftedComplement(UnShiftedMantissa,UnShiftedMantissaComplement);
+
+    wire [23:0] ShiftedMantissaAddition, UnShiftedMantissaAddition;
+    Mux24Bits MantissaMux3(ShiftedMantissa, ShiftedMantissaComplement , Sign1, ShiftedMantissaAddition);
+    Mux24Bits MantissaMux4(UnShiftedMantissa, UnShiftedMantissaComplement , Sign2, UnShiftedMantissaAddition);
+
+    //Perform addition on the shifted and non shifted mantissa
+    wire [23:0] MantissaSum, MantissaSumComplement;
+    wire Cout;
+    PlusAdder #(24) PA(ShiftedMantissaAddition, UnShiftedMantissaAddition, MantissaSum, Cout, Overflow);
+
+    //Get result's final sign
+    wire FinalSign;
+    assign FinalSign = ((SignA != SignB) && (ShiftedMantissa > UnShiftedMantissa)) ? Sign1 : Sign2;
+
+    //Choose between sum and sum's complement based on result's final sig
+    wire [23:0] FinalMantissaSum;
+    TwosComplement #(24) SumComplement(MantissaSum, MantissaSumComplement);
+    Mux24Bits MantissaMux5(MantissaSum, MantissaSumComplement, FinalSign, FinalMantissaSum);
+
+    //Shift left and right
+    wire [23:0] ShiftMantissaRight, ShiftMantissaLeft;
+    wire [31:0] MantissaSumTemp;
+    wire [4:0] ShiftAmountPlus8, ShiftAmount; //Number of leading zeros
+    assign MantissaSumTemp[23:0] = FinalMantissaSum;
+    assign MantissaSumTemp[31:24] = 8'b0;
+
+    CountLeadingZeros CLZ(MantissaSumTemp, ShiftAmountPlus8);
+    assign ShiftAmount = ShiftAmountPlus8 - 8;
+
+    //If Cout is 1 then shift mantissa by Cout
+    CoutShift ShiftCout(FinalMantissaSum, Cout, ShiftMantissaRight);
+    LeftShifter ShiftLeft(FinalMantissaSum, ShiftAmount, ShiftMantissaLeft);
+
+    wire [22:0] FinalMantissa;
+    Mux24bits MantissaMux6(ShiftMantissaRight[22:0], ShiftMantissaLeft[22:0], SignSel,FinalMantissa);
+
+    //Increments exponent if the carry from the additiion is 1
+    wire [7:0] FinalExponentIncrement, FinalExponentDecrement, FinalExponent;
+    Increment Inc(HigherExponent, Cout, FinalExponentIncrement);
+    Decrement Dec(HigherExponent, ShiftAmount, FinalExponentDecrement);
+    MUX8bits ExponentMux2(FinalExponentIncrement, FinalExponentDecrement, SignSel, FinalExponent);
+
+    assign Sum[31] = FinalSign;
+    assign Sum[30:23] = FinalExponent;
+    assign Sum[22:0] = FinalMantissa;
+
 endmodule

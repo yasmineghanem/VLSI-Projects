@@ -1,13 +1,5 @@
 `include "RippleCarryAdder.v"
-
-module MUX21(A, B, S, Out);
-
-output Out;
-input A, B, S;
-
-assign Out =(S) ? B : A;
-endmodule
-
+`include "MUXs.v"
 
 // Carry Select Adder - 32 bits
 module CarrySelectAdder #(parameter N = 32)(A,B,Sum,Cin,Cout,Overflow);
@@ -25,7 +17,7 @@ module CarrySelectAdder #(parameter N = 32)(A,B,Sum,Cin,Cout,Overflow);
 
   genvar i;
   generate for(i = 0; i < N; i = i + 4) begin
-	RippleCarryAdder #(4) RCA_0(A[i+3:i], B[i+3:i],Sum_0[i+3:i], Cout_0[(i/4)], Cout_0[(i/4)+1] , overflow[(i/4)]);
+	  RippleCarryAdder #(4) RCA_0(A[i+3:i], B[i+3:i],Sum_0[i+3:i], Cout_0[(i/4)], Cout_0[(i/4)+1] , overflow[(i/4)]);
   	RippleCarryAdder #(4) RCA_1(A[i+3:i], B[i+3:i],Sum_1[i+3:i], Cout_1[(i/4)], Cout_1[(i/4)+1] , overflow[(i/4)]);
   end
   for(i = 0; i < N; i = i + 1) begin

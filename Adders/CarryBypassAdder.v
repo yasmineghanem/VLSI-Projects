@@ -1,5 +1,5 @@
 `include "FullAdder.v"
-`include "MUX21"
+`include "MUXs.v"
 
 module CarryBypassAdder4bits(input [3:0]a,
                            input [3:0]b,

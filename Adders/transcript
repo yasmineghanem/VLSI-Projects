@@ -1,1 +1,4 @@
-# Reading C:/intelFPGA/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# Compile of CarryIncrementAdder.v was successful with warnings.
+# Compile of CarryBypassAdder.v failed with 1 errors.
+# Compile of FloatingPointAdder.v failed with 8 errors.
+# 3 compiles, 11 failed with 9 errors.

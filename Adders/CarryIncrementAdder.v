@@ -3,15 +3,6 @@
 `include "FullAdder.v"
 `include "RippleCarryAdder.v"
 
-// Half adder implementation
-module HalfAdder(A,B,Sum,Cout);
-    input A,B;
-    output Sum, Cout;
-
-    assign Sum = A ^ B;
-    assign Cout = A & B;
-endmodule
-
 // CIA 32bits
 module CarryIncrementAdder #(parameter N = 32)(A,B,Sum,Cout,Overflow);
 

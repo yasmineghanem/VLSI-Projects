@@ -16,7 +16,56 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	CarryLookAheadAdder
 
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/FullAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/FullAdder.v}
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v} {0 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MUX21
+-- Compiling module Mux24bits
+-- Compiling module MUX8bits
+** Warning: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** while parsing file included at Subtractor.v(1)
+** while parsing file included at TwosComplement.v(1)
+** at MUXs.v(2): (vlog-2275) 'MUX21' already exists and will be overwritten.
+-- Compiling module MUX21
+** Warning: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** while parsing file included at Subtractor.v(1)
+** while parsing file included at TwosComplement.v(1)
+** at MUXs.v(10): (vlog-2275) 'Mux24bits' already exists and will be overwritten.
+-- Compiling module Mux24bits
+** Warning: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** while parsing file included at Subtractor.v(1)
+** while parsing file included at TwosComplement.v(1)
+** at MUXs.v(26): (vlog-2275) 'MUX8bits' already exists and will be overwritten.
+-- Compiling module MUX8bits
+-- Compiling module HalfAdder
+-- Compiling module FullAdder
+-- Compiling module TwosComplement
+-- Compiling module HalfSubtractor
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** at Subtractor.v(3): (vlog-2730) Undefined variable: 'S'.
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** at Subtractor.v(3): Identifier must be declared with a port mode: S.
+-- Compiling module FullSubtractor
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** at Subtractor.v(17): (vlog-2730) Undefined variable: 'C'.
+-- Compiling module Subtractor
+-- Compiling module SubtractionResult
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** at Subtractor.v(46): (vlog-2730) Undefined variable: 'Borrow'.
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** at Subtractor.v(39): Identifier must be declared with a port mode: D.
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(2)
+** at Subtractor.v(39): Identifier must be declared with a port mode: Borrow.
+-- Compiling module RightShifter
+** Error: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(3)
+** at Shifter.v(4): In, out, or inout does not appear in port list: Direction.
+-- Compiling module LeftShifter
+** Error: (vlog-13069) ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/FloatingPointAdder.v(3)
+** at Shifter.v(15): near "assign": syntax error, unexpected assign, expecting ';'.
+-- Compiling module PlusAdder
+-- Compiling module Increment
+-- Compiling module FloatingPointAdder
+
+} {25.0 26.0 27.0 28.0 30.0 31.0 34.0 35.0 36.0 37.0 38.0 39.0 41.0 42.0 44.0 45.0} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/FullAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/FullAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module FullAdder
 
@@ -91,13 +140,17 @@ Top level modules:
 
 } {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v} {2 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HalfAdder
 -- Compiling module FullAdder
 ** Warning: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v(4)
 ** while parsing file included at RippleCarryAdder.v(1)
-** at FullAdder.v(1): (vlog-2275) 'FullAdder' already exists and will be overwritten.
+** at FullAdder.v(2): (vlog-2275) 'HalfAdder' already exists and will be overwritten.
+-- Compiling module HalfAdder
+** Warning: ** while parsing file included at C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryIncrementAdder.v(4)
+** while parsing file included at RippleCarryAdder.v(1)
+** at FullAdder.v(10): (vlog-2275) 'FullAdder' already exists and will be overwritten.
 -- Compiling module FullAdder
 -- Compiling module RippleCarryAdder
--- Compiling module HalfAdder
 -- Compiling module CarryIncrementAdder
 
 Top level modules:
@@ -111,18 +164,15 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	RippleCarryAdder
 
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v}
+} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v} {0 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HalfAdder
 -- Compiling module FullAdder
--- Compiling module mux_2x1
+** Error: C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/VLSI-Projects/Adders/CarryBypassAdder.v(2): Cannot open `include file "MUXs".
 -- Compiling module CarryBypassAdder4bits
 -- Compiling module CarryBypassAdder
 
-Top level modules:
-	FullAdder
-	CarryBypassAdder
-
-} {} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v}
+} {5.0 6.0} {}} {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v} {1 {vlog -work work -stats=none {C:/Users/yazmi/OneDrive/Desktop/Uni/Third Year/First Semester/VLSI/Projects/VLSI-Projects/Adders/CarrySaveAdder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module FullAdder
 -- Compiling module CarrySaveAdder
