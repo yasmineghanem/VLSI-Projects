@@ -1,4 +1,4 @@
-module BoothMultiplier #(parameter N = 32) (Multiplicand, Multiplier, Product);
+module BoothAlgorithmMultiplier #(parameter N = 32) (Multiplicand, Multiplier, Product);
     input signed [N-1:0] Multiplicand, Multiplier;
     output signed [2*N-1:0] Product;
     reg signed [2*N-1:0] Product;
