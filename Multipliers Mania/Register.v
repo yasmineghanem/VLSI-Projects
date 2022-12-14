@@ -1,25 +1,27 @@
-module Register #(parameter N = 32) (clk, dataIn, dataOut, readEnable, writeEnable);
+module Register #(parameter N = 32) (clk, dataIn, dataOut, readEnable, writeEnable, reset, accessError);
     input clk;
-    input readEnable, writeEnable;
+    input readEnable, writeEnable, reset;
     input [N-1:0] dataIn;
-    output [N-1:0] dataOut;
+    output accessError;
+    output reg [N-1:0] dataOut;
+
+    // trying to read and write at the same time
+    assign accessError = (readEnable == 1 && writeEnable == 1) ? 1'b1 : 1'b0;
 
     reg [N-1:0] register;
 
     always @(posedge clk or posedge reset) begin
-        if(reset){
+        if(reset) begin
             dataOut = 0;
-        } else{
-            if(writeEnable){
+        end else begin
+            if(accessError == 1) begin
+                //lesa hashoof
+            end else if(writeEnable) begin
                 register = dataIn;
-            }
-        }
+            end else if(readEnable) begin
+                dataOut = register;
+            end
+        end
     end
 
-    always @(negedge clk) begin
-        if(readEnable) begin
-            dataOut = register;
-        end
-        
-    end
 endmodule
