@@ -1,6 +1,10 @@
-module Multiplier #(parameter N = 32) (A,B,Out);
-    input [N-1:0] A,B;
-    input [(2*N)-1:0] Out;
+module VerilogMultiplier #(parameter N = 32) (a, b, product, overflow);
+    input [N-1:0] a,b;
+    output [(2*N)-1:0] product;
+    output overflow;
+
       
-    assign Out = A * B;
+    assign product = a * b;
+    assign overflow = (a != {32{1'b0}} && (product/a) != b) ? 1'b1 : 1'b0;
+
 endmodule
