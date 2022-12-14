@@ -1,4 +1,4 @@
-`include "FPIIntegrated.v"
+`include "FPIntegrated.v"
 
 module FPIntegratedTB ();
     reg clk;
@@ -7,6 +7,7 @@ module FPIntegratedTB ();
     reg resetA, resetB, resetOut;
     reg [31:0] a, b;
     wire [31:0] product;
+    wire infinity;
     wire overflow, NAN;
 
     FPIntegrated FPIntegratedModule(
@@ -24,10 +25,11 @@ module FPIntegratedTB ();
         .resetOut(resetOut), 
         .product(product), 
         .overflow(overflow), 
+        .infinity(infinity),
         .NAN(NAN));
 
     initial begin
-        $monitor(a, b, product, overflow, NAN);
+        $monitor(a, b, product, overflow, infinity, NAN);
 
         //initial values --> does nothing
         clk = 1; 
