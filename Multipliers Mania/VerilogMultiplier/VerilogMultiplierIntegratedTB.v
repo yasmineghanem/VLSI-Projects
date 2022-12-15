@@ -1,16 +1,17 @@
 `include "VerilogMultiplierIntegrated.v"
 
 module VerilogMultiplierIntegratedTB ();
+    parameter N = 32;
     reg clk;
     reg writeEnableA, writeEnableB, writeEnableOut;
     reg readEnableA, readEnableB, readEnableOut;
     reg resetA, resetB, resetOut;
-    reg [31:0] a, b;
-    wire [31:0] product;
+    reg [N-1:0] a, b;
+    wire [2*N-1:0] product;
     wire overflow;
     wire accessErrorA, accessErrorB, accessErrorOut;
 
-    VerilogMultiplierIntegrated VerilogMultiplierIntegratedModule(
+    VerilogMultiplierIntegrated #(N) VerilogMultiplierIntegratedModule(
         .clk(clk), 
         .a(a), 
         .b(b), 
