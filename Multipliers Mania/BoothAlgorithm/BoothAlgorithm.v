@@ -1,6 +1,7 @@
 module BoothAlgorithmMultiplier #(parameter N = 32) (Multiplicand, Multiplier, Product);
     input signed [N-1:0] Multiplicand, Multiplier;
     output signed [2*N-1:0] Product;
+
     reg signed [2*N-1:0] Product;
     reg [1:0] temp;
     integer i;
@@ -10,6 +11,10 @@ module BoothAlgorithmMultiplier #(parameter N = 32) (Multiplicand, Multiplier, P
     begin
         Product = 0;
         Q0 = 0;
+        if(Multiplier == 0 || Multiplicand == 0)
+        begin
+        Product = 0;
+        end else begin
         for (i = 0; i < N; i = i + 1)
         begin
             //temp = Q1 Q0
@@ -27,10 +32,12 @@ module BoothAlgorithmMultiplier #(parameter N = 32) (Multiplicand, Multiplier, P
             //Updating Q0
             Q0 = Multiplicand[i];
         end
-            //If the multiplier equals negative number then get the complement
-            if (Multiplier == 32'b10000000000000000000000000000000)
-                begin
-                    Product = - Product;
-                end
+        end
+	    //Corner Case for multiplier
+        //If the multiplier equals MAX negative number then we need to get the complement
+        if (Multiplier == 32'b10000000000000000000000000000000)
+            begin
+                Product = - Product;
+            end
     end
 endmodule
