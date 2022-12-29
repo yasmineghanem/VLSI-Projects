@@ -8,7 +8,6 @@ module VerilogMultiplierIntegratedTB ();
     reg resetA, resetB, resetOut;
     reg [N-1:0] a, b;
     wire [2*N-1:0] product;
-    wire overflow;
     wire accessErrorA, accessErrorB, accessErrorOut;
 
     VerilogMultiplierIntegrated #(N) VerilogMultiplierIntegratedModule(
@@ -27,8 +26,7 @@ module VerilogMultiplierIntegratedTB ();
         .accessErrorA(accessErrorA), 
         .accessErrorB(accessErrorB), 
         .accessErrorOut(accessErrorOut),
-        .product(product), 
-        .overflow(overflow));
+        .product(product));
 
     initial begin
         //initial values --> does nothing
@@ -41,7 +39,8 @@ module VerilogMultiplierIntegratedTB ();
         //Testcase(1): positive x positive: a = 211819911 b = 12345       
         #10
         // enable input registers to write a and b values
-        a = 32'b00001100101000000001110110000111; b = 32'b00000000000000000011000000111001;         
+        a = 32'd5; //5
+        b = 32'd6; //6      
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -60,19 +59,20 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != (32'd30)) 
+        begin
+            $display("TESTCASE#1 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#1: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#1 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
    
         //Testcase(2): negative x negative: a = -2111 b = -552233       
         // enable input registers to write a and b values
-        a = 32'b11111111111111111111011111000001; b = 32'b11111111111101111001001011010111;         
+        a = -32'd4; //-4
+        b = -32'd7; //-7        
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -91,19 +91,20 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != (32'd28)) 
+        begin
+            $display("TESTCASE#2 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#2: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#2 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
-        //Testcase(3): positive x negative a = 502 b = -4     
+        //Testcase(3): positive x negative a = 10 b = -4     
         // enable input registers to write a and b values
-        a = 32'b00000000000000000000000111110110; b = 32'b11111111111111111111111111111100;         
+        a = 32'd10; //10
+        b = -32'd4; //-4     
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -122,19 +123,19 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != (-32'd40)) begin
+            $display("TESTCASE#3 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#3: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#3 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
         //Testcase(4): negative x positive a = -2111 b = 125   
         // enable input registers to write a and b values
-        a = 32'b11111111111111111111011111000001; b = 32'b00000000000000000000000001111101;         
+        a = -32'd50; //-50
+        b = 32'd5; //5      
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -153,19 +154,19 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != (-32'd250)) begin
+            $display("TESTCASE#4 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#4: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#4 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
         //Testcase(5): multiplication by 0   
         // enable input registers to write a and b values
-        a = 32'b01101100101000000010110110000111; b = {32{1'b0}};         
+        a = 32'd1234; //1822436743
+        b = {32{1'b0}}; //0        
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -184,19 +185,19 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != ({32{1'b0}})) begin
+            $display("TESTCASE#5 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#5: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#5 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
         //Testcase(6): multiplication by 1  
         // enable input registers to write a and b values
-        a = 32'b00000111010110111100110100010101; b = 32'b00000000000000000000000000000001;         
+        a = 32'd99; //123456789
+        b = 32'd1; //1     
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -215,13 +216,12 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != (32'd99)) begin
+            $display("TESTCASE#6 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#6: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#6 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
@@ -245,20 +245,18 @@ module VerilogMultiplierIntegratedTB ();
         writeEnableOut = 1'b0; 
         readEnableOut = 1'b1; 
 
-        //check results
-        #10
-        if(product == (a*b)) begin
+        // check results
+        if(product != ({32{1'b0}})) begin
+            $display("TESTCASE#7 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#7: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#7 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
         readEnableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
         //Testcase(8): additional testcase: int x int a = 32 b = 23
         // enable input registers to write a and b values
-        a = 32'b00000000000000000000000000100000; b = 32'b00000000000000000000000000010111;         
+        a = 32'd32; b = 32'd23;         
         writeEnableA = 1'b1; writeEnableB = 1'b1;
 
         #10
@@ -277,13 +275,12 @@ module VerilogMultiplierIntegratedTB ();
         readEnableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == (a*b)) begin
+        
+        if(product != (32'd736)) begin
+            $display("TESTCASE#8 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#8: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#8 failed with input a=%b and a=%b and output product=%b and overflow status =%b",a, b, product, overflow);
-        end
     end
 
     always #5 clk=~clk;

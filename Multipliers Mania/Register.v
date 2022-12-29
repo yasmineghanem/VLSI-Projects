@@ -6,17 +6,15 @@ module Register #(parameter N = 32) (clk, dataIn, dataOut, readEnable, writeEnab
     output reg [N-1:0] dataOut;
 
     // trying to read and write at the same time
-    assign accessError = (readEnable == 1 && writeEnable == 1) ? 1'b1 : 1'b0;
+    assign accessError = (readEnable == 1'b1 && writeEnable == 1'b1) ? 1'b1 : 1'b0;
 
     reg [N-1:0] register;
 
     always @(posedge clk or posedge reset) begin
         if(reset) begin
-            dataOut = 0;
+            dataOut = {32{1'b0}};
         end else begin
-            if(accessError == 1) begin
-                //lesa hashoof
-            end else if(writeEnable) begin
+            if(writeEnable) begin
                 register = dataIn;
             end else if(readEnable) begin
                 dataOut = register;

@@ -1,10 +1,6 @@
-module VerilogMultiplier #(parameter N = 32) (a, b, product, overflow);
-    input [N-1:0] a,b;
-    output [(2*N)-1:0] product;
-    output overflow;
-
+module VerilogMultiplier #(parameter N = 32) (a, b, product);
+    input signed [N-1:0] a,b;
+    output signed [(2*N)-1:0] product;
       
     assign product = a * b;
-    assign overflow = (a != {32{1'b0}} && (product/a) != b) ? 1'b1 : 1'b0;
-
 endmodule
