@@ -1,22 +1,20 @@
 `include "VerilogMultiplier.v"
 `include "../Register.v"
 
-module VerilogMultiplierIntegrated #(parameter N = 32) (clk, a, b, writeEnableA, writeEnableB, writeEnableOut, readEnableA, readEnableB, readEnableOut, resetA, resetB, resetOut, product, accessErrorA, accessErrorB, accessErrorOut);
+module VerilogMultiplierIntegrated (clk, a, b, enableA, enableB, enableOut, resetA, resetB, resetOut, product);
     input clk;
-    input writeEnableA, writeEnableB, writeEnableOut;
-    input readEnableA, readEnableB, readEnableOut;
+    input enableA, enableB, enableOut;
     input resetA, resetB, resetOut;
-    input signed [N-1:0] a, b;
-    output signed [2*N-1:0] product;
-    output accessErrorA, accessErrorB, accessErrorOut;
+    input signed [31:0] a, b;
 
+    output signed [63:0] product;
 
-    wire [N-1:0] registerOutA, registerOutB;
-    Register #(N) InputRegisterA(.clk(clk), .dataIn(a), .dataOut(registerOutA), .readEnable(readEnableA), .writeEnable(writeEnableA), .reset(resetA), .accessError(accessErrorA));
-    Register #(N) InputRegisterB(.clk(clk), .dataIn(b), .dataOut(registerOutB), .readEnable(readEnableA), .writeEnable(writeEnableB), .reset(resetB), .accessError(accessErrorB));
+    wire [31:0] registerOutA, registerOutB;
+    InputRegister  InputRegisterModuleA(.clk(clk), .dataIn(a), .dataOut(registerOutA), .enable(enableA), .reset(resetA));
+    InputRegister  InputRegisterModuleB(.clk(clk), .dataIn(b), .dataOut(registerOutB), .enable(enableB), .reset(resetB));
 
-    wire [2*N-1:0] registerInProduct;
+    wire [63:0] registerInProduct;
     VerilogMultiplier VerilogMultiplierModule(.a(registerOutA), .b(registerOutB), .product(registerInProduct));
 
-    Register #(2*N) OutputRegister(.clk(clk), .dataIn(registerInProduct), .dataOut(product), .readEnable(readEnableOut), .writeEnable(writeEnableOut), .reset(resetOut), .accessError(accessErrorOut));
+    OutputRegister OutputRegisterModule(.clk(clk), .dataIn(registerInProduct), .dataOut(product), .enable(enableOut), .reset(resetOut));
 endmodule

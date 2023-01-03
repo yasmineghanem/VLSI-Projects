@@ -7,4 +7,4 @@ vlog ../Register.v
 vsim VerilogMultiplierIntegratedTB
 
 add wave *
-run -all
+run 1000

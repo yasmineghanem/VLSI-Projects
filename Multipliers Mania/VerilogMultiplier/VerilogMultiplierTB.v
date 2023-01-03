@@ -1,19 +1,18 @@
 `include "VerilogMultiplier.v"
 
 module VerilogMultiplierTB();
-    parameter N = 32;
-    reg [N-1:0] a, b;
-    wire [2*N-1:0] product;
+    reg [31:0] a, b;
+    wire [63:0] product;
     
-    VerilogMultiplier #(N) VerilogMultiplierModule(.a(a), .b(b), .product(product));
+    VerilogMultiplier VerilogMultiplierModule(.a(a), .b(b), .product(product));
         initial begin
 
             //Testcase(1): positive x positive
             a = 32'd5; //5
             b = 32'd6; //6
             //30
-            
-            if(product != (32'd30)) 
+            #5
+            if(product != (64'd30)) 
             begin
                 $display("TESTCASE#1 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -26,8 +25,9 @@ module VerilogMultiplierTB();
             a = -32'd4; //-4
             b = -32'd7; //-7
             //28
-            
-            if(product != (32'd28)) 
+
+            #5
+            if(product != (64'd28)) 
             begin
                 $display("TESTCASE#2 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -39,8 +39,9 @@ module VerilogMultiplierTB();
             a = 32'd10; //10
             b = -32'd4; //-4
             //-40
-            
-            if(product != (-32'd40)) 
+
+            #5
+            if(product != (-64'd40)) 
             begin
                 $display("TESTCASE#3 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -53,7 +54,8 @@ module VerilogMultiplierTB();
             b = 32'd5; //5
             //-250
             
-            if(product != (-32'd250)) 
+            #5
+            if(product != (-64'd250)) 
             begin
                 $display("TESTCASE#4 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -66,7 +68,8 @@ module VerilogMultiplierTB();
             b = {32{1'b0}}; //0
             //0
             
-            if(product != ({32{1'b0}})) 
+            #5
+            if(product != ({64{1'b0}})) 
             begin
                 $display("TESTCASE#5 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -79,7 +82,8 @@ module VerilogMultiplierTB();
             b = 32'd1; //1
             //99
             
-            if(product != (32'd99)) 
+            #5
+            if(product != (64'd99)) 
             begin
                 $display("TESTCASE#6 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -92,7 +96,8 @@ module VerilogMultiplierTB();
             b = {32{1'b0}}; //0
             //0
             
-            if(product != ({32{1'b0}})) 
+            #5
+            if(product != ({64{1'b0}})) 
             begin
                 $display("TESTCASE#7 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
@@ -105,7 +110,8 @@ module VerilogMultiplierTB();
             b = 32'd23; //23
             //736         
 
-            if(product != (32'd736)) 
+            #5
+            if(product != (64'd736)) 
             begin
                 $display("TESTCASE#8 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
             end else begin
