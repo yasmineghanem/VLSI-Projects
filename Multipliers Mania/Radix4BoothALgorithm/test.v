@@ -1,0 +1,125 @@
+// module Radix4BoothMulitplier #(parameter N = 32) (Multiplicand, Multiplier,Product);
+
+// //Multiplicand,Multiplier
+// input  [N-1:0] Multiplicand, Multiplier;
+// output reg signed [2*N-1:0] Product;
+
+
+//     reg   [2*N-1:0] pp=0; //partial products
+//     reg   [2*N-1:0] spp=0; //shifted partial products
+//     wire [N-1:0] inv_Multiplicand;
+
+//     reg [2:0] booth;
+//     integer i = 0;
+//     assign inv_Multiplicand = (~Multiplicand) +1'b1;
+ 
+
+//     always @(Multiplicand,Multiplier,inv_Multiplicand)
+//     begin
+// 	booth =3'b000;
+//         //Generate Ck for K=0 (special case) & then Ck for each k!=0
+//         booth[0] = {Multiplier[1],Multiplier[0],1'b0};
+//         for (i = 1; i < N; i = i + 1)
+//         begin
+//             booth[i] = {Multiplier[2*i+1],Multiplier[2*i],Multiplier[2*i-1]};
+//         end
+
+//         for(i=0;i<N;i=i+1)
+//         begin
+//             case(booth[i]) //Depending upon Ck, select M,2M,-M,-2M, or 0 as the partial product
+//                 3'b001 , 3'b010 : pp[i] = {Multiplicand[N-1],Multiplicand};
+//                 3'b011 : pp[i] = {Multiplicand,1'b0};
+//                 3'b100 : pp[i] = {inv_Multiplicand[N-1:0],1'b0};
+//                 3'b101 , 3'b110 : pp[i] = inv_Multiplicand;
+//                 default : pp[i] = 0;
+//             endcase
+//             spp[i] = $signed(pp[i]);//sign extend
+//             for(i=0;i<i;i=i+1)
+//                 spp[i] = {spp[i],2'b00}; //multiply by 2 to the power Multiplicand or shifting operation
+//         end
+        
+//         Product = spp[0];
+//         for(i=1;i<N;i=i+1)
+//             Product = Product + spp[i]; //add partial products to get result
+//     end
+
+    
+
+//     /*
+//         always @ (Multiplicand or Multiplier or inv_Multiplicand)
+//         begin
+//         cc[0] = {Multiplier[1],Multiplier[0],1'b0}; //generate Ck for k=0(special case)
+//         for(i=1;i<N;i=i+1)
+//         cc[i] = {Multiplier[2*i+1],Multiplier[2*i],Multiplier[2*i-1]}; //generate Ck for each k, for k is not 0
+//         for(i=0;i<N;i=i+1)
+//         begin
+//         case(cc[i]) //Depending upon Ck, select M,2M,-M,-2M, or 0 as the partial product
+//         3'b001 , 3'b010 : pp[i] = {Multiplicand[width-1],Multiplicand};
+//         3'b011 : pp[i] = {Multiplicand,1'b0};
+//         3'b100 : pp[i] = {inv_Multiplicand[width-1:0],1'b0};
+//         3'b101 , 3'b110 : pp[i] = inv_Multiplicand;
+//         default : pp[i] = 0;
+//         endcase
+//         spp[i] = $signed(pp[i]);//sign extend
+//         for(i=0;i<i;i=i+1)
+//         spp[i] = {spp[i],2'b00}; //multiply by 2 to the power Multiplicand or shifting operation
+//         end //for(i=0;i<N;i=i+1)
+//         prod = spp[0];
+//         for(i=1;i<N;i=i+1)
+//         prod = prod + spp[i]; //add partial products to get result
+//         end
+//         assign p = prod;
+//     */
+
+// endmodule
+
+
+
+module Booth4AlgorithmMultiplier #(parameter N = 32) (Multiplicand, Multiplier, Product);
+    input signed [N-1:0] Multiplicand, Multiplier;
+    output signed [2*N-1:0] Product;
+
+    reg signed [2*N-1:0] Product;
+    reg [2:0] booth;
+    integer i;
+    reg Q0;
+    wire [N-1:0] inv_Multiplicand; assign inv_Multiplicand = (~Multiplicand) +1'b1;
+    always @ (Multiplicand, Multiplier)
+    begin
+        Product = 0;
+        Q0 = 0;
+        if(Multiplier == 0 || Multiplicand == 0)
+        begin
+        Product = 0;
+        end else begin
+        for (i = 0; i < N; i = i + 1)
+        begin
+            //booth = Q1 Q0
+            booth = {Multiplicand[i+1],Multiplicand[i], Q0};
+            //If booth = 10 then A = A - M where Product MSB 32 bits = A
+            //If booth = 01 then A = A + M where Product MSB 32 bits = A
+            case (booth)
+                //2'b10 : Product [2*N-1 : N] = Product [2*N-1 : N] - Multiplier;
+                //2'b01 : Product [2*N-1 : N] = Product [2*N-1 : N] + Multiplier;
+                3'b001 , 3'b010 : Product [2*N-1 : N] = Product [2*N-1 : N]+{Multiplicand[N-1],Multiplicand};
+                3'b011 : Product [2*N-1 : N] = Product [2*N-1 : N]+{Multiplicand,1'b0};
+                3'b100 : Product [2*N-1 : N] = Product [2*N-1 : N]+{inv_Multiplicand[N-1:0],1'b0};
+                3'b101 , 3'b110 : Product [2*N-1 : N] = Product [2*N-1 : N]+inv_Multiplicand;
+                //default : Product [2*N-1 : N] = Product [2*N-1 : N] + 0;
+            default : begin end
+            endcase
+            //Shift arithmetic right (Keeping sign bit)
+            Product = Product >> 1;
+            Product[2*N-1] = Product[2*N-2];
+            //Updating Q0
+            Q0 = Multiplicand[i];
+        end
+        end
+	    //Corner Case for multiplier
+        //If the multiplier equals MAX negative number then we need to get the complement
+        if (Multiplier == 32'b10000000000000000000000000000000)
+            begin
+                Product = - Product;
+            end
+    end
+endmodule
