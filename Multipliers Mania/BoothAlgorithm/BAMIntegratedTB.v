@@ -1,289 +1,203 @@
 `include "BAMIntegrated.v"
 
-module BMAIntegratedTB ();
+module BAMIntegratedIntegratedTB ();
     reg clk;
-    reg writeEnableA, writeEnableB, writeEnableOut;
-    reg readEnableA, readEnableB, readEnableOut;
+    // reg writeEnableA, writeEnableB, writeEnableOut;
+    // reg readEnableA, readEnableB, readEnableOut;
+    reg enableA, enableB, enableOut;
     reg resetA, resetB, resetOut;
-    reg [31:0] A, B;
+    reg [31:0] a, b;
     wire [63:0] product;
-    wire accessErrorA, accessErrorB, accessErrorOut;
 
     BAMIntegrated BAMIntegratedModule(
         .clk(clk), 
-        .Multiplicand(A), 
-        .Multiplier(B), 
-        .writeEnableA(writeEnableA), 
-        .writeEnableB(writeEnableB), 
-        .writeEnableOut(writeEnableOut), 
-        .readEnableA(readEnableA), 
-        .readEnableB(readEnableB), 
-        .readEnableOut(readEnableOut), 
+        .a(a), 
+        .b(b), 
+        .enableA(enableA), 
+        .enableB(enableB), 
+        .enableOut(enableOut), 
         .resetA(resetA), 
         .resetB(resetB), 
         .resetOut(resetOut),
-        .accessErrorA(accessErrorA), 
-        .accessErrorB(accessErrorB), 
-        .accessErrorOut(accessErrorOut),
-        .Product(product)
-        );
+        .product(product));
 
     initial begin
         //initial values --> does nothing
         clk = 1; 
-        A = {32{1'b0}}; B = {32{1'b0}}; 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; writeEnableOut = 1'b0; 
-        readEnableA = 1'b0; readEnableB = 1'b0; readEnableOut = 1'b0; 
+        a = {32{1'b0}}; b = {32{1'b0}}; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b0; 
         resetA = 1'b0; resetB = 1'b0; resetOut = 1'b0;
 
-        //Testcase(1): positive x positive:       
-        #10
-        // enable input registers to write A & B values
-        A = 32'b00001100101000000001110110000111; B = 32'b00000000000000000011000000111001;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        //Testcase(1): positive x positive: a = 5 b = 6       
+        #20
+        // enable input registers to write a and b values
+        a = 32'd5; //5
+        b = 32'd6; //6      
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == 64'd2614916801295) begin
+        #30
+        if(product != (32'd30)) begin
+            $display("TESTCASE#1 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#1: SUCCESS");
-        end 
-        else begin
-            $display("TESTCASE#1 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
         end
-        readEnableOut = 1'b0;
+
+        #10
+        enableOut = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
    
-        //Testcase(2): negative x negative: a = -5.5 b = -10.5       
-        // enable input registers to write A & B values
-        A = 32'b11111111111111111111011111000001; B = 32'b11111111111101111001001011010111;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        //Testcase(2): negative x negative: a = -2111 b = -552233       
+        // enable input registers to write a and b values
+        a = -32'd4; //-4
+        b = -32'd7; //-7        
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == 64'd1165763863) begin
+        #30
+        if(product != (32'd28)) 
+        begin
+            $display("TESTCASE#2 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#2: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#2 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
-        readEnableOut = 1'b0;
+
+        #10
+        enableOut = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
-        //Testcase(3): positive x negative a = 6.25 b = -3.4     
-        // enable input registers to write A & B values
-        A = 32'b00000000000000000000000111110110; B = 32'b11111111111111111111111111111100;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        //Testcase(3): positive x negative a = 10 b = -4     
+        // enable input registers to write a and b values
+        a = 32'd10; //10
+        b = -32'd4; //-4     
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == -64'd2008) begin
+        #30
+        if(product != (-32'd40)) begin
+            $display("TESTCASE#3 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#3: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#3 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
-        readEnableOut  = 1'b0;
+        #10
+        enableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
-        //Testcase(4): negative x positive a = -5.5 b = 6.25   
-        // enable input registers to write A & B values
-        A = 32'b11111111111111111111011111000001; B = 32'b00000000000000000000000001111101;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        //Testcase(4): negative x positive a = -2111 b = 125   
+        // enable input registers to write a and b values
+        a = -32'd50; //-50
+        b = 32'd5; //5      
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == -64'd263875) begin
+        #30
+        if(product != (-32'd250)) begin
+            $display("TESTCASE#4 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#4: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#4 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
-        readEnableOut  = 1'b0;
+        #10
+        enableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
         //Testcase(5): multiplication by 0   
-        // enable input registers to write A & B values
-        A = 32'b01101100101000000010110110000111; B = {32{1'b0}};         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        // enable input registers to write a and b values
+        a = 32'd1234; //1234
+        b = {32{1'b0}}; //0        
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == {32{1'b0}}) begin
+        #30
+        if(product != ({32{1'b0}})) begin
+            $display("TESTCASE#5 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#5: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#5 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
-        readEnableOut  = 1'b0;
+        #10
+        enableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
         //Testcase(6): multiplication by 1  
-        // enable input registers to write A & B values
-        A = 32'b00000111010110111100110100010101; B = 32'b00000000000000000000000000000001;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        // enable input registers to write a and b values
+        a = 32'd99; //123456789
+        b = 32'd1; //1     
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == 64'd123456789) begin
+        #30
+        if(product != (32'd99)) begin
+            $display("TESTCASE#6 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#6: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#6 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
-        readEnableOut  = 1'b0;
+
+        #10
+        enableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
-        //Testcase(7): additional testcase: float x int a = 6.5 b = 3
-        // enable input registers to write A & B values
-        A = 32'b00000000000000000000000000000000; B = 32'b00000000000000000000000000000000;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        //Testcase(7): additional testcase: 0 x 0
+        // enable input registers to write a and b values
+        a = {32{1'b0}}; b = {32{1'b0}};         
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == 64'd0) begin
+        #30
+        if(product != ({32{1'b0}})) begin
+            $display("TESTCASE#7 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#7: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#7 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
-        readEnableOut  = 1'b0;
+
+        #10
+        enableOut  = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
         
-        //Testcase(8): additional testcase: int x int a = 1 b = -1
-        // enable input registers to write A & B values
-        A = 32'b01111111111111111111111111111111; B = 32'b10000000000000000000000000000000;         
-        writeEnableA = 1'b1; writeEnableB = 1'b1;
+        //Testcase(8): additional testcase: int x int a = 32 b = 23
+        // enable input registers to write a and b values
+        a = 32'd32; b = 32'd23;         
+        enableA = 1'b1; enableB = 1'b1;
 
-        #10
+        #20
         // enable input registers to read a and b values -> the multiplier performs operation and outputs the product 
-        writeEnableA = 1'b0; writeEnableB = 1'b0; 
-        readEnableA = 1'b1; readEnableB = 1'b1;
-
-        #10
-        // enable output register to write multiplication output
-        writeEnableOut = 1'b1; 
-        readEnableA = 1'b0; readEnableB = 1'b0;
-
-        #10
-        //enable output register to read the product
-        writeEnableOut = 1'b0; 
-        readEnableOut = 1'b1; 
+        enableA = 1'b0; enableB = 1'b0; enableOut = 1'b1; 
 
         //check results
-        #10
-        if(product == -64'd4611686016279904256) begin
+        #30
+        if(product != (32'd736)) begin
+            $display("TESTCASE#8 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
+        end else begin
             $display("TESTCASE#8: SUCCESS");
         end 
-        else begin
-            $display("TESTCASE#8 failed with input a=%d and b=%d and output product=%d " ,A,B,product );
-        end
     end
 
-    always #5 clk=~clk;
+    always #10 clk=~clk;
     
 endmodule
