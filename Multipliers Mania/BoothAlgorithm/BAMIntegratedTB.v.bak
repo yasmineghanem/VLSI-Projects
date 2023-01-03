@@ -9,8 +9,8 @@ module BAMIntegratedIntegratedTB ();
 
     BAMIntegrated BAMIntegratedModule(
         .clk(clk), 
-        .a(a), 
-        .b(b), 
+        .Multiplicand(a), 
+        .Multiplier(b), 
         .enableA(enableA), 
         .enableB(enableB), 
         .enableOut(enableOut), 
@@ -71,11 +71,10 @@ module BAMIntegratedIntegratedTB ();
         #10
         enableOut = 1'b0;
 /*---------------------------------------------------------------------------------------------------------------------------------*/
-        
         //Testcase(3): positive x negative a = 10 b = -4     
         // enable input registers to write a and b values
-        a = 32'd10; //10
-        b = -32'd4; //-4     
+        a = 32'h87234; //10
+        b = 32'hFFFFFEFD; //-4     
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -84,7 +83,7 @@ module BAMIntegratedIntegratedTB ();
 
         //check results
         #30
-        if(product != (-32'd40)) begin
+        if(product != (64'hFFFFFFFFF7747564)) begin
             $display("TESTCASE#3 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
         end else begin
             $display("TESTCASE#3: SUCCESS");
@@ -105,7 +104,7 @@ module BAMIntegratedIntegratedTB ();
 
         //check results
         #30
-        if(product != (-32'd250)) begin
+        if(product != (-64'd250)) begin
             $display("TESTCASE#4 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
         end else begin
             $display("TESTCASE#4: SUCCESS");
@@ -196,6 +195,6 @@ module BAMIntegratedIntegratedTB ();
         end 
     end
 
-    always #10 clk=~clk;
+    always #3 clk=~clk;
     
 endmodule
