@@ -2,8 +2,6 @@
 
 module BAMIntegratedIntegratedTB ();
     reg clk;
-    // reg writeEnableA, writeEnableB, writeEnableOut;
-    // reg readEnableA, readEnableB, readEnableOut;
     reg enableA, enableB, enableOut;
     reg resetA, resetB, resetOut;
     reg [31:0] a, b;
@@ -11,15 +9,15 @@ module BAMIntegratedIntegratedTB ();
 
     BAMIntegrated BAMIntegratedModule(
         .clk(clk), 
-        .a(a), 
-        .b(b), 
+        .Multiplicand(a), 
+        .Multiplier(b), 
         .enableA(enableA), 
         .enableB(enableB), 
         .enableOut(enableOut), 
         .resetA(resetA), 
         .resetB(resetB), 
         .resetOut(resetOut),
-        .product(product));
+        .Product(product));
 
     initial begin
         //initial values --> does nothing
@@ -198,6 +196,6 @@ module BAMIntegratedIntegratedTB ();
         end 
     end
 
-    always #10 clk=~clk;
+    always #5 clk=~clk;
     
 endmodule
