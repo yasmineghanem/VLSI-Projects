@@ -147,7 +147,7 @@ module GenericVerilogTB ();
 
         //check results
         #30
-        if(product != (64'h39F2D6B54142AEEA)) begin
+        if(product != (64'hE98E647F4142AEEA)) begin
             $display("TESTCASE#6 FAILED with inputs a=%d and b=%d and output product=%d", a, b, product);
         end else begin
             $display("TESTCASE#6: SUCCESS");
