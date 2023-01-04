@@ -1,0 +1,390 @@
+Report for group default
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Startpoint: InputRegisterB_dataOut_reg[0]/Q
+    (Clocked by vsysclk F)
+Endpoint: OutputRegister_register_reg[62]/D
+    (Clocked by vsysclk R)
+Path Group: default
+Data required time: 2469.7
+    (Clock shift: 2500.0, minus Uncertainty: 0.0, plus Latency 0.0, minus Setup time: 30.3)
+Data arrival time: 1531.1
+Slack: 938.6
+Logic depth: 159
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                     Arrival               Arc      Net               Net    Total   fan-                                   
+Path                     Module/Cell           Edge     Time    Delay    Delay    Delay     Slew     Load     Load    out     Location Power Domain      (V)
+                                                        (ps)     (ps)     (ps)     (ps)     (ps)     (ff)     (ff)    (#)      (um,um)                      
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+clk                      {create_clock}           f      0.0      0.0      0.0                        0.0      0.0      3   158,    0                       
+OutputRegister_i_1_0/A->ZN
+                         INV_X4_LVT              fr      0.0      0.0      0.0      0.0      0.0      0.0      0.0    128   153,   56  /PD_TOP        (1.10)
+InputRegisterB_dataOut_reg[0]/CK->Q
+                         DFF_X1_LVT*             rr     24.2     24.2     24.2      0.0      0.0     30.0    239.4     68   153,   56  /PD_TOP        (1.10)
+BAMMultiplier/i_6_0/i_0/B->Z
+                         XOR2_X2_LVT*            rr     42.3     16.4     16.4      0.0      1.6     12.2    131.4     33    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_2/i_0/B->CO
+                         HA_X1_LVT               rr     47.5      6.9      4.7      2.2      1.6      0.3      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_2/i_1/CI->CO
+                         FA_X1_LVT               rr     53.7      6.2      6.2      0.0      1.3      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_2/i_2/CI->S
+                         FA_X1_LVT               rf     65.6     11.9     11.9      0.0      1.6      0.4      2.6      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_2046/C1->ZN
+                         AOI222_X2_LVT           fr     84.3     18.7     18.7      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_2045/A->ZN
+                         INV_X8_LVT              rf     85.9      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_7/i_2/B->CO
+                         FA_X1_LVT               ff     95.3      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_7/i_3/CI->S
+                         FA_X1_LVT               ff    105.9     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1980/B1->ZN
+                         AOI222_X2_LVT           fr    123.5     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1979/A->ZN
+                         INV_X8_LVT              rf    125.1      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_11/i_2/B->CO
+                         FA_X1_LVT               ff    134.5      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_11/i_3/CI->S
+                         FA_X1_LVT               ff    145.1     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1914/B1->ZN
+                         AOI222_X2_LVT           fr    162.7     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1913/A->ZN
+                         INV_X8_LVT              rf    164.3      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_15/i_2/B->CO
+                         FA_X1_LVT               ff    173.7      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_15/i_3/CI->S
+                         FA_X1_LVT               ff    184.3     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1848/B1->ZN
+                         AOI222_X2_LVT           fr    201.9     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1847/A->ZN
+                         INV_X8_LVT              rf    203.5      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_19/i_2/B->CO
+                         FA_X1_LVT               ff    212.9      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_19/i_3/CI->S
+                         FA_X1_LVT               ff    223.5     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1782/B1->ZN
+                         AOI222_X2_LVT           fr    241.1     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1781/A->ZN
+                         INV_X8_LVT              rf    242.7      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_23/i_2/B->CO
+                         FA_X1_LVT               ff    252.1      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_23/i_3/CI->S
+                         FA_X1_LVT               ff    262.7     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1716/B1->ZN
+                         AOI222_X2_LVT           fr    280.3     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1715/A->ZN
+                         INV_X8_LVT              rf    281.9      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_27/i_2/B->CO
+                         FA_X1_LVT               ff    291.3      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_27/i_3/CI->S
+                         FA_X1_LVT               ff    301.9     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1650/B1->ZN
+                         AOI222_X2_LVT           fr    319.5     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1649/A->ZN
+                         INV_X8_LVT              rf    321.1      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_31/i_2/B->CO
+                         FA_X1_LVT               ff    330.5      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_31/i_3/CI->S
+                         FA_X1_LVT               ff    341.1     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1584/B1->ZN
+                         AOI222_X2_LVT           fr    358.7     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1583/A->ZN
+                         INV_X8_LVT              rf    360.3      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_35/i_2/B->CO
+                         FA_X1_LVT               ff    369.7      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_35/i_3/CI->S
+                         FA_X1_LVT               ff    380.3     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1518/B1->ZN
+                         AOI222_X2_LVT           fr    397.9     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1517/A->ZN
+                         INV_X8_LVT              rf    399.5      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_39/i_2/B->CO
+                         FA_X1_LVT               ff    408.9      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_39/i_3/CI->S
+                         FA_X1_LVT               ff    419.5     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1452/B1->ZN
+                         AOI222_X2_LVT           fr    437.1     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1451/A->ZN
+                         INV_X8_LVT              rf    438.7      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_43/i_2/B->CO
+                         FA_X1_LVT               ff    448.1      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_43/i_3/CI->S
+                         FA_X1_LVT               ff    458.7     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1386/B1->ZN
+                         AOI222_X2_LVT           fr    476.3     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1385/A->ZN
+                         INV_X8_LVT              rf    477.9      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_47/i_2/B->CO
+                         FA_X1_LVT               ff    487.3      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_47/i_3/CI->S
+                         FA_X1_LVT               ff    497.9     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1320/B1->ZN
+                         AOI222_X2_LVT           fr    515.5     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1319/A->ZN
+                         INV_X8_LVT              rf    517.1      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_51/i_2/B->CO
+                         FA_X1_LVT               ff    526.5      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_51/i_3/CI->S
+                         FA_X1_LVT               ff    537.1     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1254/B1->ZN
+                         AOI222_X2_LVT           fr    554.7     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1253/A->ZN
+                         INV_X8_LVT              rf    556.3      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_55/i_2/B->CO
+                         FA_X1_LVT               ff    565.7      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_55/i_3/CI->S
+                         FA_X1_LVT               ff    576.3     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1188/B1->ZN
+                         AOI222_X2_LVT           fr    593.9     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1187/A->ZN
+                         INV_X8_LVT              rf    595.5      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_59/i_2/B->CO
+                         FA_X1_LVT               ff    604.9      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_59/i_3/CI->S
+                         FA_X1_LVT               ff    615.5     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1122/B1->ZN
+                         AOI222_X2_LVT           fr    633.1     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1121/A->ZN
+                         INV_X8_LVT              rf    634.7      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_63/i_2/B->CO
+                         FA_X1_LVT               ff    644.1      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_63/i_3/CI->S
+                         FA_X1_LVT               ff    654.7     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1056/B1->ZN
+                         AOI222_X2_LVT           fr    672.3     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_1055/A->ZN
+                         INV_X8_LVT              rf    673.9      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_67/i_2/B->CO
+                         FA_X1_LVT               ff    683.3      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_67/i_3/CI->S
+                         FA_X1_LVT               ff    693.9     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_990/B1->ZN
+                         AOI222_X2_LVT           fr    711.5     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_989/A->ZN
+                         INV_X8_LVT              rf    713.1      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_71/i_2/B->CO
+                         FA_X1_LVT               ff    722.5      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_71/i_3/CI->S
+                         FA_X1_LVT               ff    733.1     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_924/B1->ZN
+                         AOI222_X2_LVT           fr    750.7     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_923/A->ZN
+                         INV_X8_LVT              rf    752.3      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_75/i_2/B->CO
+                         FA_X1_LVT               ff    761.7      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_75/i_3/CI->S
+                         FA_X1_LVT               ff    772.3     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_858/B1->ZN
+                         AOI222_X2_LVT           fr    789.9     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_857/A->ZN
+                         INV_X8_LVT              rf    791.5      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_78/i_2/B->CO
+                         FA_X1_LVT               ff    800.9      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_78/i_3/CI->S
+                         FA_X1_LVT               ff    811.5     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_792/B1->ZN
+                         AOI222_X2_LVT           fr    829.1     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_791/A->ZN
+                         INV_X8_LVT              rf    830.7      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_82/i_2/B->CO
+                         FA_X1_LVT               ff    840.1      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_82/i_3/CI->S
+                         FA_X1_LVT               ff    850.7     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_726/B1->ZN
+                         AOI222_X2_LVT           fr    868.3     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_725/A->ZN
+                         INV_X8_LVT              rf    869.9      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_86/i_2/B->CO
+                         FA_X1_LVT               ff    879.3      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_86/i_3/CI->S
+                         FA_X1_LVT               ff    889.9     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_660/B1->ZN
+                         AOI222_X2_LVT           fr    907.5     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_659/A->ZN
+                         INV_X8_LVT              rf    909.1      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_90/i_2/B->CO
+                         FA_X1_LVT               ff    918.5      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_90/i_3/CI->S
+                         FA_X1_LVT               ff    929.1     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_594/B1->ZN
+                         AOI222_X2_LVT           fr    946.7     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_593/A->ZN
+                         INV_X8_LVT              rf    948.3      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_94/i_2/B->CO
+                         FA_X1_LVT               ff    957.7      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_94/i_3/CI->S
+                         FA_X1_LVT               ff    968.3     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_528/B1->ZN
+                         AOI222_X2_LVT           fr    985.9     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_527/A->ZN
+                         INV_X8_LVT              rf    987.5      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_98/i_2/B->CO
+                         FA_X1_LVT               ff    996.9      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_98/i_3/CI->S
+                         FA_X1_LVT               ff   1007.5     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_462/B1->ZN
+                         AOI222_X2_LVT           fr   1025.1     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_461/A->ZN
+                         INV_X8_LVT              rf   1026.7      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_102/i_2/B->CO
+                         FA_X1_LVT               ff   1036.1      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_102/i_3/CI->S
+                         FA_X1_LVT               ff   1046.7     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_396/B1->ZN
+                         AOI222_X2_LVT           fr   1064.3     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_395/A->ZN
+                         INV_X8_LVT              rf   1065.9      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_106/i_2/B->CO
+                         FA_X1_LVT               ff   1075.3      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_106/i_3/CI->S
+                         FA_X1_LVT               ff   1085.9     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_330/B1->ZN
+                         AOI222_X2_LVT           fr   1103.5     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_329/A->ZN
+                         INV_X8_LVT              rf   1105.1      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_110/i_2/B->CO
+                         FA_X1_LVT               ff   1114.5      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_110/i_3/CI->S
+                         FA_X1_LVT               ff   1125.1     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_264/B1->ZN
+                         AOI222_X2_LVT           fr   1142.7     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_263/A->ZN
+                         INV_X8_LVT              rf   1144.3      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_114/i_2/B->CO
+                         FA_X1_LVT               ff   1153.7      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_114/i_3/CI->S
+                         FA_X1_LVT               ff   1164.3     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_198/B1->ZN
+                         AOI222_X2_LVT           fr   1181.9     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_197/A->ZN
+                         INV_X8_LVT              rf   1183.5      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_118/i_2/B->CO
+                         FA_X1_LVT               ff   1192.9      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_118/i_3/CI->S
+                         FA_X1_LVT               ff   1203.5     10.6     10.6      0.0      1.8      0.4      2.5      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_132/B1->ZN
+                         AOI222_X2_LVT           fr   1221.1     17.6     17.6      0.0      1.7      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_131/A->ZN
+                         INV_X8_LVT              rf   1222.7      1.6      1.6      0.0     12.6      1.1     10.2      3    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_2/B->CO
+                         FA_X1_LVT               ff   1232.1      9.4      9.4      0.0      0.4      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_3/CI->CO
+                         FA_X1_LVT               ff   1240.8      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_4/CI->CO
+                         FA_X1_LVT               ff   1249.5      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_5/CI->CO
+                         FA_X1_LVT               ff   1258.2      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_6/CI->CO
+                         FA_X1_LVT               ff   1266.9      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_7/CI->CO
+                         FA_X1_LVT               ff   1275.6      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_8/CI->CO
+                         FA_X1_LVT               ff   1284.3      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_9/CI->CO
+                         FA_X1_LVT               ff   1293.0      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_10/CI->CO
+                         FA_X1_LVT               ff   1301.7      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_11/CI->CO
+                         FA_X1_LVT               ff   1310.4      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_12/CI->CO
+                         FA_X1_LVT               ff   1319.1      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_13/CI->CO
+                         FA_X1_LVT               ff   1327.8      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_14/CI->CO
+                         FA_X1_LVT               ff   1336.5      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_15/CI->CO
+                         FA_X1_LVT               ff   1345.2      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_16/CI->CO
+                         FA_X1_LVT               ff   1353.9      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_17/CI->CO
+                         FA_X1_LVT               ff   1362.6      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_18/CI->CO
+                         FA_X1_LVT               ff   1371.3      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_19/CI->CO
+                         FA_X1_LVT               ff   1380.0      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_20/CI->CO
+                         FA_X1_LVT               ff   1388.7      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_21/CI->CO
+                         FA_X1_LVT               ff   1397.4      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_22/CI->CO
+                         FA_X1_LVT               ff   1406.1      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_23/CI->CO
+                         FA_X1_LVT               ff   1414.8      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_24/CI->CO
+                         FA_X1_LVT               ff   1423.5      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_25/CI->CO
+                         FA_X1_LVT               ff   1432.2      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_26/CI->CO
+                         FA_X1_LVT               ff   1440.9      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_27/CI->CO
+                         FA_X1_LVT               ff   1449.6      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_28/CI->CO
+                         FA_X1_LVT               ff   1458.3      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_29/CI->CO
+                         FA_X1_LVT               ff   1467.0      8.7      8.7      0.0      1.8      0.4      3.1      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_30/CI->CO
+                         FA_X1_LVT*              ff   1481.3     14.3     14.3      0.0      1.8      0.7     26.1      2    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_33/B3->ZN
+                         OAI33_X1_LVT            fr   1491.4     10.1     10.1      0.0      1.4      0.3      3.7      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_122/i_32/B->Z
+                         XOR2_X2_LVT             rf   1493.7      2.3      2.3      0.0      6.3      6.1      2.7      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_124/B1->ZN
+                         AOI221_X2_LVT           fr   1510.4     16.7     16.7      0.0      1.3      0.3     24.2      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_6_1_123/A->ZN
+                         INV_X8_LVT              rf   1511.9      1.5      1.5      0.0     11.9      5.8      7.7      1    90,  110  /PD_TOP        (1.10)
+BAMMultiplier/i_0_0_127/A1->ZN
+                         AND2_X4_LVT             ff   1516.6      4.7      3.4      1.3      0.3      0.8     10.9      3   156,  146  /PD_TOP        (1.10)
+BAMMultiplier/i_0_4/i_68/A->ZN
+                         XNOR2_X2_LVT            fr   1525.5      8.9      8.9      0.0      0.9      0.3     24.1      1   156,  146  /PD_TOP        (1.10)
+BAMMultiplier/i_0_0_152/A->ZN
+                         INV_X8_LVT              rf   1526.6      1.1      1.1      0.0      7.3      0.3      4.1      1   156,  146  /PD_TOP        (1.10)
+BAMMultiplier/i_0_0_61/B2->ZN
+                         OAI21_X4_LVT            fr   1530.0      3.4      3.4      0.0      0.3      5.3      6.4      1   156,  146  /PD_TOP        (1.10)
+OutputRegister_register_reg[62]/D
+                         DFFR_X1_LVT              r   1531.1      1.1               1.1      2.1                            153,   56  /PD_TOP        (1.10)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Report for group I2R
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Startpoint: enableA
+    (Clocked by vsysclk R)
+Endpoint: InputRegisterA_dataOut_reg[31]/D
+    (Clocked by vsysclk F)
+Path Group: I2R
+Data required time: 2472.5
+    (Clock shift: 2500.0, minus Uncertainty: 0.0, plus Latency 0.0, minus Setup time: 27.5)
+Data arrival time: 211.6
+Slack: 2260.9
+Logic depth: 1
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                     Arrival               Arc      Net               Net    Total   fan-                                   
+Path                     Module/Cell           Edge     Time    Delay    Delay    Delay     Slew     Load     Load    out     Location Power Domain      (V)
+                                                        (ps)     (ps)     (ps)     (ps)     (ps)     (ff)     (ff)    (#)      (um,um)                      
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+enableA                  {set_input_delay}        r    200.0    200.0    200.0                       33.7    247.3     97   153,    0                       
+i_0_1_0/S->Z             MUX2_X1_LVT             rf    211.6     11.6     11.2      0.4    100.0      0.3      1.4      1   153,   56  /PD_TOP        (1.10)
+InputRegisterA_dataOut_reg[31]/D
+                         DFF_X1_LVT               f    211.6      0.0               0.0      1.1                            153,   56  /PD_TOP        (1.10)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Report for group I2O
+Report for group R2O
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Startpoint: OutputRegister_dataOut_reg[62]/Q
+    (Clocked by vsysclk F)
+Endpoint: Product[62]
+    (Clocked by vsysclk R)
+Path Group: R2O
+Data required time: 1500.0
+    (Clock shift: 2500.0, minus Uncertainty: 0.0, plus Latency 0.0, minus Out delay: 1000.0)
+Data arrival time: 14.8
+Slack: 1485.2
+Logic depth: 0
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                     Arrival               Arc      Net               Net    Total   fan-                                   
+Path                     Module/Cell           Edge     Time    Delay    Delay    Delay     Slew     Load     Load    out     Location Power Domain      (V)
+                                                        (ps)     (ps)     (ps)     (ps)     (ps)     (ff)     (ff)    (#)      (um,um)                      
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+clk                      {create_clock}           f      0.0      0.0      0.0                        0.0      0.0      3   158,    0                       
+OutputRegister_i_1_0/A->ZN
+                         INV_X4_LVT              fr      0.0      0.0      0.0      0.0      0.0      0.0      0.0    128   153,   56  /PD_TOP        (1.10)
+OutputRegister_dataOut_reg[62]/CK->Q
+                         DFF_X1_LVT              rf     14.2     14.2     14.2      0.0      0.0      4.1     15.3      2   153,   56  /PD_TOP        (1.10)
+Product[62]                                       f     14.8      0.6               0.6      2.9                            143,    0                       
+------------------------------------------------------------------------------------------------------------------------------------------------------------
