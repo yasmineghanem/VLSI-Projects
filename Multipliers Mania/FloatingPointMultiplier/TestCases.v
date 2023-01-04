@@ -56,7 +56,7 @@ module GenericFloatingTB ();
    
         //Testcase(2):     
         // enable input registers to write a and b values
-        a = 32'b11000000101100000000000000000000; b = 32'b11000001001010000000000000000000;         
+        a = 32'h4EA0C8E4; b = 32'h4EA0C246;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -78,7 +78,7 @@ module GenericFloatingTB ();
         
         //Testcase(3): 
         // enable input registers to write a and b values
-        a = 32'b01000000110010000000000000000000; b = 32'b11000000010110011001100110011010;         
+        a = 32'h49072340; b = 32'hC3818000;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -100,7 +100,7 @@ module GenericFloatingTB ();
         
         //Testcase(4):
         // enable input registers to write a and b values
-        a = 32'b11000000101100000000000000000000; b = 32'b01000000110010000000000000000000;         
+        a = 32'h4EA0C8E4; b = 32'hCE8EF06B;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -122,7 +122,7 @@ module GenericFloatingTB ();
         
         //Testcase(5):
         // enable input registers to write a and b values
-        a = 32'b01000010101010100100000000000000; b = {32{1'b0}};         
+        a = 32'hC3818000; b = {32'h49072340};         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -144,7 +144,7 @@ module GenericFloatingTB ();
         
         //Testcase(6):
         // enable input registers to write a and b values
-        a = 32'b01000010001101001000000000000000; b = 32'b00111111100000000000000000000000;         
+        a = 32'hCE8EF06B; b = 32'h4EA0C8E4;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -166,7 +166,7 @@ module GenericFloatingTB ();
         
         //Testcase(7): 
         // enable input registers to write a and b values
-        a = 32'b01000000110100000000000000000000; b = 32'b01000000010000000000000000000000;         
+        a = 32'hC3818000; b = 32'hC3818000;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -188,7 +188,7 @@ module GenericFloatingTB ();
         
         //Testcase(8): 
         // enable input registers to write a and b values
-        a = 32'b00111111100000000000000000000000; b = 32'b10111111100000000000000000000000;         
+        a = 32'hCE8EF06B; b = 32'hCEEF06AA;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -210,7 +210,7 @@ module GenericFloatingTB ();
         
         //Testcase(9): 
         // enable input registers to write a and b values
-        a = 32'b01000000110100000000000000000000; b = 32'b01000000010000000000000000000000;         
+        a = 32'h3F800000; b = 32'h4EA0C8E4;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
@@ -232,7 +232,7 @@ module GenericFloatingTB ();
         
         //Testcase(10):
         // enable input registers to write a and b values
-        a = 32'b01000000110100000000000000000000; b = 32'b01000000010000000000000000000000;         
+        a = 32'hCE8EF06B; b = 32'h3F800000;         
         enableA = 1'b1; enableB = 1'b1;
 
         #20
